@@ -1,0 +1,598 @@
+$NavBarBordercolorLight: black;
+$NavBarBordercolor2: #0C0F3F;
+
+$ColorGradient1: #32383F;
+$ColorGradient2: #14181D;
+
+$KeyBotColor: #00CDFF;
+$BackgroundColor: rgb(6, 3, 22);
+
+$LightTheme: #D6D9DC;
+$DarkTheme: rgb(6, 3, 22);
+
+@mixin alignCenter {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes rotate{
+    to{
+        transform: rotate(360deg);
+    }
+}   
+
+@mixin ChangeTheme ($ThemeColorDark){
+
+    @if $ThemeColorDark {
+        background-color: $DarkTheme;
+    } @else {
+        background-color: $LightTheme;
+    }
+}
+
+@mixin BlinkAnimation {
+    transition: height 500ms, border-radius 500ms;
+}
+
+.HomePage{
+
+    position: absolute;
+    // top: 13%;
+    width: 100%;
+    display: grid;
+    height: 83vh;
+    margin-top: 120px;
+    grid-template-columns: 1fr 650px 1fr;
+    grid-template-areas: 
+    "LeftBox ImgBox RightBox";
+
+    div{
+        position: relative;
+    }
+
+    .ImgBox{
+        grid-area: ImgBox;
+
+
+        .RobotLight{
+            width: 2%;
+            height: 2%;
+            border-radius: 50%;
+            position: absolute;            
+            left: 50.5%;
+            top: 19%;
+
+            transform: translate(-50%,-50%);
+
+            background-color: $KeyBotColor;
+            transition: box-shadow 1s;
+        }
+
+        img{
+        position: absolute;
+            width: 100%;
+
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+            // margin-top: 0%;
+
+            &:hover + .RobotLight{
+                box-shadow: 0px 0px 100px 50px $KeyBotColor;
+                transition: box-shadow 1s;
+            }
+
+            &:hover + .EyesBox ~ .Mouth{
+                background-color: black;
+            }
+        }
+        
+        .EyesBox{
+            position: absolute;
+            width: 35%;
+            height: 10%;
+            z-index: -1;
+
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-60%);
+
+            // margin-top: 9%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .LeftEyeOpened {
+                width: 20%;
+                height: 65%;
+                background-color: white;
+                position: relative;
+                overflow: hidden;
+                
+                border-radius: 25px;
+                @include BlinkAnimation();
+            }
+
+            .RightEyeOpened {
+                @extend .LeftEyeOpened;
+            }
+
+            .LeftEyeClosed{
+                width: 20%;
+                height: 2px;
+                position: relative;
+                background-color: white;
+
+                @include BlinkAnimation();
+
+
+                .Iris{
+                    opacity: 0;
+                    transition: opacity 100ms;
+                    }
+            
+            }
+
+            .RightEyeClosed{
+                @extend .LeftEyeClosed;
+            }
+
+            .Iris{
+                width: 40%;
+                height: 40%;
+                opacity: 1;
+                background-color: rgb(13, 55, 94);
+                border-radius: 50%;
+                position: absolute;
+                border: 5px solid black;
+
+                left: 50%;
+                top: 50%;
+
+                transform: translate(-50%, -50%);
+
+                transition: opacity 100ms;
+
+                .Ball{
+                    width: 30%;
+                    height: 30%;
+                    background-color: white;
+                    border-radius: 50%;
+                    position: absolute;
+                    right: 0%;
+                }
+
+            }
+
+            .Mouth{
+                width: 20%;
+
+                height: 35%;
+
+                border-top-right-radius: 30%;
+                border-top-left-radius: 30%;
+
+                border-bottom-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+
+                align-self: flex-end;
+
+                background-color: white;
+                position: relative;
+
+            }
+        }
+
+    }
+    .LeftBox{
+        @include ChangeTheme($ThemeColorDark: true);
+        grid-area: LeftBox;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        // background-color: white;
+        text-align: center;
+
+        .CircleContainer{
+
+            // background-color: white;
+            width: 300px;
+            height: 300px;
+            align-self: center;
+
+            @include alignCenter();
+
+
+            .CircleStats{
+                @include alignCenter();
+                position: relative;
+                width: 85%;
+                height: 85%;
+                border: 30px solid rgb(7, 4, 32);
+                box-shadow: 10px 10px 50px rgb(24, 37, 61);
+                align-self: center;
+                border-radius: 50%;
+                // background: white;
+
+                .PercentageContainer{
+                    @include alignCenter();
+                    z-index: 0;
+                    position: relative;
+                    border-radius: 50%;
+                    width: 65%;
+                    height: 65%;
+                    border: 0px solid transparent;
+                    box-shadow: 0px 0px 35px $KeyBotColor;
+                    // background-color: rgb(7, 23, 53);
+                    // background-color: white;
+
+                    .HoverBoxes{
+                        @include alignCenter();
+                        z-index: 2;
+                        position: absolute;
+                        justify-self: center;
+                        align-self: center;
+
+                        // background: blue;
+                        width: 140%;
+                        height: 140%;
+
+                        div{
+                            position: absolute;
+                            transition: border 500ms;
+                        }
+
+                        .yellow{
+                            top: 0%;
+                            left: 18%;
+                            width: 65%;
+                            height: 50px;
+                            // background-color: yellow;
+
+                            &:hover ~ .PercentageCircle{
+                                border-top: 60px solid yellow;
+                            }
+                        }
+
+                        .blue{
+                            bottom: 0%;
+                            left: 18%;
+                            width: 65%;
+                            height: 50px;
+                            // background-color: $KeyBotColor;
+                            &:hover ~ .PercentageCircle{
+                                border-bottom: 60px solid $KeyBotColor;
+                            }
+                        }
+
+                        .red{
+                            bottom: 15%;
+                            right: 0%;
+                            width: 50px;
+                            height: 65%;
+                            // background-color: red;
+                            &:hover ~ .PercentageCircle{
+                                border-right: 60px solid red;
+                            }
+                        }
+
+                        .green{
+                            bottom: 15%;
+                            left: 0%;
+                            width: 50px;
+                            height: 65%;
+                            // background-color: lime;
+                            &:hover ~ .PercentageCircle{
+                                border-left: 60px solid lime;
+                            }
+                        }
+
+
+                        .PercentageCircle{
+                            @include alignCenter();
+                            z-index: -1;
+                            border-radius: 50%;
+                            width: 70%;
+                            height: 70%;
+                            align-self: center;
+                            justify-self: center;
+                            
+                            border-bottom: 40px solid $KeyBotColor;
+                            border-left:40px solid rgb(38, 225, 97);
+                            border-top: 40px solid rgb(250, 238, 68);
+                            border-right: 40px solid rgb(226, 39, 39);
+                            
+                            box-shadow: 
+                            0px -5px 10px -5px rgb(250, 238, 68),
+                            0px 5px 10px -5px $KeyBotColor,
+                            -5px 0px 10px -5px rgb(38, 225, 97),
+                            5px 0px 10px -5px rgb(226, 39, 39),
+
+                            inset 0px 5px 10px -5px rgb(250, 238, 68),
+                            inset 0px -5px 10px -5px $KeyBotColor,
+                            inset 5px 0px 10px -5px rgb(38, 225, 97),
+                            inset -5px 0px 10px -5px rgb(226, 39, 39);
+                            
+                            transition: border 500ms;
+                            
+                            h1{
+                                position: absolute;
+                            }
+
+                            .InnerBall{
+                                width: 15%;
+                                height: 15%;
+                                border-radius: 50%;
+                                background-color: black;
+                                box-shadow: 0px 0px 30px white;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        .BoxPat{
+            position: relative;
+            width: 90%;
+            height: 45%;
+            // background: white;
+            align-self: center;
+            box-shadow: 10px 10px 50px rgb(24, 37, 61);
+            border-radius: 50px;
+        }
+    }
+    .RightBox{
+        grid-area: RightBox;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgb(6, 3, 22);
+
+        .GroupMembers{
+            width: 90%;
+            height: 13%;
+            align-self: center;
+            background-color: lightseagreen;
+            background-color: rgb(6, 3, 22);
+            box-shadow: 10px 10px 50px rgb(24, 37, 61);
+            border-radius: 50px;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: space-around;
+
+            .PeopleBox{
+                display: block;
+                align-self: center;
+            }
+            .PeopleImg{
+                height: 100%;
+                width: 30%;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    align-self: center;
+                    
+                }
+            }
+        }
+        .MainSpace{
+            @extend .GroupMembers;            
+            height: 50%;
+
+            display: flex;  
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h1{
+                transform: rotate(40deg)
+            }
+        }
+        .ThemeBox{
+            @extend .GroupMembers;
+            justify-content: space-evenly;
+
+            .ThemeButtonDark{
+                align-self: center;
+                background-color: $NavBarBordercolor2;
+                height: 70%;
+                width: 20%;
+                border-radius: 50%;
+                box-shadow: -5px -5px 15px $BackgroundColor, 5px 5px 15px rgb(37, 37, 37);
+                border: 3px solid $NavBarBordercolor2;
+                outline: none;
+
+                transition: box-shadow 500ms, border 500ms, background-color 500ms ;
+
+                svg{
+                    width: 60%;
+                    height: 60%;
+                    position: absolute;
+                    border-radius: 50%;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                    fill: white;
+
+                    transition: fill 500ms;
+                }
+            }
+
+            .ThemeButtonLight{
+                @extend .ThemeButtonDark;
+
+                box-shadow: -5px -5px 15px $BackgroundColor, 5px 5px 15px rgb(37, 37, 37), inset -5px -5px 15px grey, inset 5px 5px 5px black;
+                background-color: white;
+                border: 3px solid white;
+
+                transition: box-shadow 500ms, border 500ms, background-color 500ms ;
+        
+                svg{
+                    fill: $NavBarBordercolor2;
+                    transition: fill 500ms;
+                }
+            }
+
+            .SelectedTheme{
+                align-self: center;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1300px){
+    .HomePage{
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        grid-template-areas: 
+        "ImgBox LeftBox"
+        "ImgBox RightBox";
+
+        .ImgBox{            
+
+            img{
+                bottom: 15%;
+            }
+        }
+
+        .LeftBox{
+            flex-direction: row;
+
+            .BoxPat{
+                width: 50%;
+                height: 80%;
+            }
+            
+            .CircleContainer{
+                height: 80%;
+                width: 40%;
+            }
+
+            .BoxStats{
+                height: 80%;
+            }
+        }
+
+        .RightBox{
+            font-size: 10px;
+            .MainSpace{
+                h1{
+                    transform: rotate(20deg);
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 1150px){
+    .HomePage{
+        grid-template-columns: 1fr;
+        grid-template-rows: 83vh 700px 700px;
+        grid-template-areas: 
+        "ImgBox"
+        "LeftBox"
+        "RightBox";
+
+        .ImgBox{
+            // background: lightcoral;
+
+            .RobotLight{
+                top: 15%;
+            }
+        }
+
+        .LeftBox{
+            // background: lightseagreen;
+            flex-direction: column;
+            margin-top: 0px;
+
+            .CircleContainer{
+                justify-content: space-evenly;
+                width: 300px;
+                height: 300px;
+                // .CircleStats{
+                //     width: 60%;
+                //     height: 55%;
+                // }
+            }
+
+            .BoxStats{
+                height: 70%;
+                margin-right: 2%;
+            }
+        }
+
+        .ImgBox{
+
+            .EyesBox{
+                    width: 25%;
+                }
+
+            img{
+                width: 80%;
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 800px){
+    .HomePage{
+        height: 50vh;
+        margin-top: 15%;
+
+        .ImgBox{
+
+            .RobotLight{
+                
+                top:29%;
+            }
+
+            .EyesBox{
+                .LeftEyeOpened{
+                    width: 30px;
+                    height: 30px;
+                }
+
+                .Mouth{
+                    height: 10px;
+                    bottom: 20%;
+                }
+            }
+
+        }
+
+        .LeftBox{
+
+            .BoxPat{
+            height: 40%;
+            width: 80%;         
+            }
+        }
+        
+
+    }
+
+}
+
+

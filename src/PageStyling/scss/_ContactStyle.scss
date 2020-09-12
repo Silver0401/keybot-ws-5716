@@ -1,0 +1,199 @@
+$BackgroundColor: rgb(6, 3, 22);
+$ButtonColor: white;
+
+
+// #tsparticles{
+//     position: absolute;
+// }
+
+
+.ContactMePage{
+    position: absolute;
+    margin-top: 150px;
+    width: 100%;
+    height: 82vh;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "SocialMediaBox MailBox";
+
+    .SocialMediaBox{
+        position: relative;
+        grid-area: SocialMediaBox;
+        background-color: transparent;
+        // background-color: $BackgroundColor;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        a{
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border: 5px solid white;
+            box-shadow: 0px 0px 15px lightblue;
+            border-radius: 50%;
+            align-self: center;
+            justify-self: center;
+            cursor: pointer;
+            transition: border 500ms, box-shadow 500ms;
+
+            svg{
+                width:50%;
+                height:50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                transition: fill 500ms;
+            }
+
+        }
+
+        .Facebook{
+            &:hover{
+                border: 5px solid rgb(24, 61, 143);
+                box-shadow: 0px 0px 20px rgb(18, 76, 201);
+                transition: border 500ms, box-shadow 500ms;
+            }
+            &:hover svg{
+                fill:rgb(18, 60, 150);
+                transition: fill 500ms;
+            }
+
+
+        }
+
+        .Twitter{
+            &:hover{
+                border: 5px solid rgb(122, 181, 244);
+                box-shadow: 0px 0px 20px rgb(72, 115, 210);
+                transition: border 500ms, box-shadow 500ms;
+            }
+
+            &:hover svg{
+                fill:rgb(44, 125, 196);
+                transition: fill 500ms;
+            }
+        }
+
+        .Youtube{
+            
+            &:hover{
+                border: 5px solid rgb(211, 67, 105);
+                box-shadow: 0px 0px 20px rgb(216, 112, 55);
+                transition: border 500ms, box-shadow 500ms;
+            }
+
+            &:hover svg{
+                fill:rgb(179, 32, 54);
+                transition: fill 500ms;
+            }
+        }
+        .Instagram{
+            &:hover{
+                border: 5px solid rgb(166, 16, 196);
+                box-shadow: 0px 0px 20px rgb(184, 35, 167);
+                transition: border 500ms, box-shadow 500ms;
+            }
+
+            &:hover svg{
+                fill: rgb(184, 35, 167);
+                transition: fill 500ms;
+            }
+
+        }
+    }
+
+
+    .MailFormsBox{
+        position: relative;
+        grid-area: MailBox;
+        background-color: transparent;
+        // background-color: $BackgroundColor;
+
+        text-align: center;
+
+        h1{
+            padding: 15px;
+            padding-bottom: 30px;
+            font-size: 35px;
+        }
+
+        form{
+            // background: white;
+            height: 85%;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            div{
+                // background: white;
+                height: 10%;
+                width: 100%;
+                align-self: center;
+            }
+
+            input{
+             
+                padding: 5px 20px;
+                font-size: 25px;
+                border-radius: 50px;
+                color: grey;
+            }
+
+            
+            .nameBox, .mailBox, .subjectBox, .phoneBox{
+                input{
+                    background: $BackgroundColor;
+                    border: 2px solid white;
+                    border-top: 2px solid transparent;
+                    border-right: 2px solid transparent;
+                    outline: none;
+                    width: 50%;
+                    transition: width 500ms;
+
+                    &:focus{
+                        width: 70%;
+                        color: white;
+                        transition: width 500ms;
+                    }
+                }
+            }
+            
+            .messageBox{
+                height: 30%;
+                margin-bottom: 20px;
+                vertical-align: text-top;
+                input{
+                    width: 70%;
+                    height: 100%;
+                    background-color: $BackgroundColor;
+                    vertical-align: text-top;
+                    &:focus{
+                        outline: none;
+                        box-shadow: 0px 0px 15px lightblue;
+                    }
+                }
+         
+            }
+        }
+    }
+    
+}
+
+
+
+@media (max-width: 1200px){
+    .ContactMePage{
+        grid-template-rows: 550px 550px;
+        grid-template-areas: 
+        "MailBox"
+        "SocialMediaBox";
+    }
+}
+
