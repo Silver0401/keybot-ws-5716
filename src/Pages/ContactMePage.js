@@ -1,7 +1,47 @@
-import React from "react";
+import React, { useRef } from "react";
 import TSParticles from "react-tsparticles";
+import axios from "axios";
 
 const ContactMePage = () => {
+
+    const NameBox = useRef("none")
+    const MailBox = useRef("none")
+    const PhoneBox = useRef("none")
+    const SubjectBox = useRef("none")
+    const MessageBox = useRef("none")
+
+    const HandleSubmitForm = e => {
+        e.preventDefault()
+        
+        const info = {
+          name: NameBox.current.value,
+          email: MailBox.current.value,
+          phone: PhoneBox.current.value,
+          subject: SubjectBox.current.value,
+          message: MessageBox.current.value,
+        }
+
+        axios.post("/Submits/add", info)
+          .then(res => {
+
+            if (res.data === "added"){
+              console.log("Submit Forms Sent")
+
+              NameBox.current.value = ""
+              MailBox.current.value = ""
+              PhoneBox.current.value = ""
+              SubjectBox.current.value = ""
+              MessageBox.current.value = ""
+
+              alert("Your Info has been Send, you will be hearing from us soon")
+
+            } else {
+              console.log("thingy")
+            }
+
+          })
+          .catch(err => console.log(err))
+    }
 
     return (
       <div className="ContactMePage">
@@ -13,6 +53,7 @@ const ContactMePage = () => {
               background: {
                 color: {
                   value: "#060316",
+                  // value: "#7B67E8",
                 },
               },
               fpsLimit: 60,
@@ -150,6 +191,7 @@ const ContactMePage = () => {
             </svg>
           </a>
         </div>
+
         <div className="MailFormsBox">
           <h1>Send Us your Info!</h1>
 
@@ -159,6 +201,7 @@ const ContactMePage = () => {
                 placeholder="Your Name"
                 type="text"
                 name="something"
+                ref={NameBox}
               ></input>
             </div>
             <div className="mailBox">
@@ -166,6 +209,7 @@ const ContactMePage = () => {
                 placeholder="Your Mail"
                 type="email"
                 name="something"
+                ref={MailBox}
               ></input>
             </div>
             <div className="phoneBox">
@@ -173,6 +217,7 @@ const ContactMePage = () => {
                 placeholder="Your Phone Number"
                 type="text"
                 name="something"
+                ref={PhoneBox}
               ></input>
             </div>
             <div className="subjectBox">
@@ -180,13 +225,14 @@ const ContactMePage = () => {
                 placeholder="The Subject"
                 type="text"
                 name="something"
+                ref={SubjectBox}
               ></input>
             </div>
             <div className="messageBox">
-              <input placeholder="Message" type="text" name="something"></input>
+              <input ref={MessageBox} placeholder="Message" type="text" name="something"></input>
             </div>
             <div className="submitBox">
-              <input type="submit" name="something"></input>
+              <input onClick={HandleSubmitForm} type="submit" name="something"></input>
             </div>
           </form>
         </div>

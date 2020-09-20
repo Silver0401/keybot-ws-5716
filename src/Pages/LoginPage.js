@@ -51,6 +51,30 @@ const LoginPage = () => {
 
     }
     
+    function PuchiLook() {
+      anime({
+        targets: [".LeftEye, .RightEye"],
+        duration: 1000,
+        height: "40px"
+      })
+
+      anime({
+        targets: "#rightArm",
+        duration: 4000,
+        rotateZ: -250
+      })
+      anime({
+        targets: "#leftArm",
+        duration: 4000,
+        rotateZ: 250
+      })
+      anime({
+        targets: ['#leftArm, #rightArm'],
+        duration: 1500,
+        opacity: 0,
+      })
+    }
+
     return (
       <div className="LoginWrapper">
 
@@ -138,10 +162,18 @@ const LoginPage = () => {
 
         <div className="LoginPage">
           <div className="ButtonsBox">
-            <h4 className="LogInButton" onClick={() => setFormState("LoginForms")}>
+            <h4 className="LogInButton" onClick={() => {
+              setFormState("LoginForms")
+              PuchiLook()
+
+              }}>
               Log In
             </h4>
-            <h4 className="SignUpButton" onClick={() => setFormState("SignUpForms")}>
+            <h4 className="SignUpButton" onClick={() => {
+              setFormState("SignUpForms")
+              PuchiLook()
+
+              }}>
               Sign Up
             </h4>
           </div>

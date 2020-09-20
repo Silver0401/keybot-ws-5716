@@ -1,10 +1,21 @@
 import React from "react";
 import BotFace from "./../../Resources/LoginKeybot.png";
-import anime from "animejs";
 
 const BotAnim = () => {
+
     return(
         <div className="BotAnim">
+
+            <div id="leftArm">
+                <div className="ArmStructure"></div>
+                <div className="Hand"></div>
+            </div>
+            
+            <div id="rightArm">
+                <div className="ArmStructure"></div>
+                <div className="Hand"></div>
+            </div>
+
             <div className="eyesBox">
                 <div className="LeftEye">
                     <div className="Iris">
@@ -21,6 +32,7 @@ const BotAnim = () => {
                 </div>
                 
             </div>
+            
             <img src={BotFace} alt="KeybotImg"></img>
         </div>
     )

@@ -15,7 +15,7 @@ const NavBar = () => {
 
         <div className="GlobalNavBar">  
 
-            <h1 className="Logo">KEYBOT - 5716</h1>
+            <h1 className="Logo">KEYBOT - 5716 </h1>
 
             {/* <h1 className="TeamNumber">5716</h1> */}
 

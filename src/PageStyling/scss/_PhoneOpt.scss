@@ -1,0 +1,196 @@
+@media (max-width: 400px){
+
+    .GlobalNavBar{
+        height: 80px;
+        .burguerNotClicked{
+            margin-top: 12px;
+        }
+    }
+
+    .HomePage{
+        .ImgBox{
+
+            overflow: hidden;
+
+            img{
+                width: 140%;
+            }
+
+            .RobotLight{
+                width: 15px;
+                height: 15px;
+                top: 23.5%;
+            }
+
+            .EyesBox{
+
+                width: 45%;
+                height: 15%;
+
+                .LeftEyeOpened{
+                    width: 25%;
+                    height: 35%;
+
+                }   
+                .RightEyeOpened{
+                    // @extend .LeftEyeOpened
+                }
+            }
+        }
+
+        .RightBox{
+            margin-bottom: 80px;
+        }
+    }
+
+    .ContactMePage{
+
+        grid-template-rows: 700px 1fr;
+
+        .SocialMediaBox{
+
+            grid-template-columns: 1fr;
+            grid-template-rows: 300px 300px 300px 300px ;
+            grid-template-areas: 
+            "TW"
+            "FB"
+            "IG"
+            "YT";
+
+        }
+    }
+
+    .AboutPage{
+        grid-template-rows: 400px 600px 500px 1500px 500px 800px 80px;
+
+        .FirstInfoBox{
+            .wrapper{
+                .Info{
+                    .TitleThing{
+                        width: 80%;
+                    }
+                    .Paragraph{
+                        p{
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .FirstSeasonsBox{
+            .ButtonBox{
+                .TopBox, .BottomBox, .MiddleBox{
+
+                    .ButtonNotClicked{
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+            }
+        }
+
+        .HistoryBox{
+            h1{
+                padding: 5px;
+                text-align: center;
+            }
+        }
+
+        .CardsBox{
+            background: white;
+            grid-template-rows: 68% 32%;
+            .LargeCardsBox{
+                flex-direction: column;
+                justify-content: space-around;
+                .Card{
+                    height: 45%;
+                }
+            }
+            .SmallCardsBox{
+                .Card{
+                    height: 90%;
+                }
+                // margin: 100px 0px;
+            }
+        }
+
+        .VisionMision{
+
+            flex-direction: column;
+            .vision{
+                margin-right: 0%;
+                width: 80%;
+                height: 40%;
+            }
+            .mision{
+                margin-left: 0%;
+                width: 80%;
+                height: 40%;
+            }
+        }
+
+        .Gallery{
+            grid-template-rows: 10% 45% 45%;
+            overflow: hidden;
+
+            .GalleryTitle{
+                margin-right: 380px;
+            }
+
+            .TopRow, .MiddleRow{
+                // .Container1, .Container2{
+                width: 700px;
+                // }
+            }
+        }
+
+        .Footer{
+            font-size: 15px;
+        }
+    }
+
+    .LoginWrapper{
+        width: 100%;
+        height: 100%;
+    }
+    .LoginPage{
+        height: 70%;
+        width: 90%;
+        .BotAnim{
+            // height: 30%;
+            width: 85%;
+
+            .eyesBox{
+
+                .Iris{
+                    width: 13px;
+                    height: 13px;
+                }
+
+                .LeftEye{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        .LoginFormBox, .SignUpFormBox{
+            form{
+                .Row{
+                    input{
+                        width: 80%;
+                    }
+                }
+
+                .CheckBox{
+                    top: 30%;
+                }
+                .CheckBox2{
+                    top: -3%;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

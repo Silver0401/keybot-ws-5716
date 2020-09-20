@@ -1,11 +1,18 @@
 $KeyBotColor: #00CDFF;
 $BackgroundColor: rgb(6, 3, 22);
 
+@mixin alignCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}   
+
 @mixin formsGeneralStuff{
 
         display: block;
         width: 90%;
-        height: 50%;
+        height: 55%;
         align-self: center;
         position: relative;
 
@@ -15,23 +22,24 @@ $BackgroundColor: rgb(6, 3, 22);
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-
+            justify-content: space-evenly;
+            // background-color: white;
 
             .Row{
                 position: relative;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-around;
+                justify-content: space-between;
 
                 align-self: center;
                 width: 90%;
-                height: 100px;
-                // background: white;
+                height: 50px;
 
                 label{
+                    position: relative;
                     margin-left: 5%;
                     font-size: 20px;
+                    height: 20px;
                 }
 
                 input{
@@ -39,10 +47,11 @@ $BackgroundColor: rgb(6, 3, 22);
                     opacity: 1;
                     position: relative;
                     width: 90%;
-                    font-size: 20px;
-                    padding: 15px;
-                    background: transparent;
+                    height: 2px;
+                    font-size: calc(.8em + 1vw);
+                    padding: 20px;
                     color: white;
+                    background: transparent;
                     
                     border: 4px solid white;
                     border-top: 4px solid transparent;
@@ -55,17 +64,16 @@ $BackgroundColor: rgb(6, 3, 22);
                     background: white;
                     width: 5px;
                     height: 4.5px;
-                    bottom: -4%;
+                    bottom: 0%;
 
                     transition: width 1s, background-color 500ms;
                 }
 
                 .ColorBox2{
                     @extend .ColorBox1;
-                    bottom: -3%;
+                    bottom: 0%;
                 }
 
-                
                 .userI{
 
                     &:focus{
@@ -94,12 +102,59 @@ $BackgroundColor: rgb(6, 3, 22);
                     }
                 }
             
-                
+                #subButton{
+
+                    position: absolute;
+                    // bottom: 0%;
+                    height: 100%;
+                    width: 100%;
+                    background: $BackgroundColor;
+                    color: white;
+                    font-size: 20px;
+                    align-self: center;
+                    border: 2px solid $KeyBotColor;
+                    transition: background 500ms, color 500ms, border 500ms;
+                    padding: 0;
+                    
+                    &:hover{
+                        background: $KeyBotColor;
+                        color: $BackgroundColor;
+                        border: 2px solid white;   
+                        transition: background 500ms, color 500ms, border 500ms;
+                    }
+                }
             }            
+
+            .CheckBox{
+                position: absolute;
+                top: 100px;
+                right: 0%;
+                width: 150px;
+                height: 40px;
+                // background: white;
+                @include alignCenter();
+
+                label{
+                    color: white;
+                    font-size: 15px;
+                }
+
+                input{
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+
+            .CheckBox2{
+                @extend .CheckBox;
+                right: 10px;
+                top: 155px;   
+            }
         }
 }
 
 .LoginWrapper{
+    overflow: hidden;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -107,20 +162,21 @@ $BackgroundColor: rgb(6, 3, 22);
     align-items: center;
     margin-top: 30px;
     justify-content: center;
-}
 
-#tsparticles{
-    position: absolute;
-    width: 100%;
-    height: 100%;
+
+    #tsparticles{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .LoginPage{
     opacity: 1;
     z-index: 2;
-    margin-top: 50px;
-    height: 75vh;
-    width: 500px;
+    margin-top: 40px;
+    height: 81vh;
+    width: 470px;
     background: $BackgroundColor;
     position: relative;
     border-radius: 10px;
@@ -144,13 +200,13 @@ $BackgroundColor: rgb(6, 3, 22);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        font-size: calc(.5em + .9vw);
 
         .LogInButton{
             position: relative;
             z-index: 1;
             width: 25%;
             height: 100%;
-            font-size: 20px;
             cursor: pointer;
             color: white;
             background: transparent;
@@ -176,7 +232,6 @@ $BackgroundColor: rgb(6, 3, 22);
             z-index: 1;
             width: 25%;
             height: 100%;
-            font-size: 20px;
             cursor: pointer;
             color: white;
             background: transparent;
@@ -205,14 +260,51 @@ $BackgroundColor: rgb(6, 3, 22);
 
     .BotAnim{
         position: relative;
-        width: 80%;
-        height: 45%;
+        width: 70%;
+        height: 40%;
         align-self: center;
         position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         // background: white;
 
+        @mixin armAnatomy {
+            position: absolute;
+            opacity: 0;
+            width: 150px;
+            height: 150px;
+            // background: blue;
+            bottom: 0%;
+            z-index: 1;
+
+            .ArmStructure{
+                position: absolute;
+                width: 50px;
+                height: 140px;
+                background: $BackgroundColor;
+                bottom: 0%;
+                border-radius: 100px;
+                border: 2px solid white;
+            }
+            .Hand{
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                border: 30px solid white;
+
+                border-top: 25px solid transparent;
+                // border-top: 25px solid transparent;
+
+                background: transparent;
+                border-radius: 50%;
+            }
+        }
+
         img{
-            position: relative;
+            position: absolute;
             width: 100%;
             height: 100%;
             z-index: -1;
@@ -220,14 +312,14 @@ $BackgroundColor: rgb(6, 3, 22);
 
         .eyesBox{
             position: absolute;
-            // background: white;
             width: 45%;
             height: 25%;
+            z-index: 0;
 
-            top: 65%;
-            left: 50%;
+            top: 55%;
+            // left: 50%;
 
-            transform: translate(-50%,-35%);
+            // transform: translate(-50%,-35%);
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -263,6 +355,7 @@ $BackgroundColor: rgb(6, 3, 22);
                 border: 2px solid $BackgroundColor; 
                 align-self: center;
                 border-radius: 50%;
+                overflow: hidden;
             }
 
             .Mouth{
@@ -292,6 +385,35 @@ $BackgroundColor: rgb(6, 3, 22);
                 @extend .LeftEye;
             }
         }
+
+        #leftArm{
+            @include armAnatomy();
+            left: 0%;
+            transform-origin: left bottom;
+            .ArmStructure{
+                left: 15px;
+                top: 30px;
+                transform: rotateZ(50deg);
+            }
+            .Hand{
+                transform: rotateZ(40deg);
+                right: 0%;
+            }
+        }
+        #rightArm{
+            @include armAnatomy();
+            right: 0%;
+            transform-origin: right bottom;
+            .ArmStructure{
+                right: 15px;
+                top: 30px;
+                transform: rotateZ(-50deg);
+            }
+            .Hand{
+                transform: rotateZ(-40deg);
+                left: 0%;
+            }
+        }
     }
 
     .LoginFormBox{
@@ -300,26 +422,12 @@ $BackgroundColor: rgb(6, 3, 22);
     
     .SignUpFormBox{
         @include formsGeneralStuff();
-        // background: white;
-        height: 40%;
+
         form{
             .Row{
-                justify-content: space-between;
-                .ColorBox1, .ColorBox2{
-                    bottom: 0%;
-                }
-                // background: white;
-                height: 90px;
-
-                input{
-                    height: 10px;
-                    // background: white;
-                }
-
                 label{
-                    margin-left: 0;
-                    margin-top: 10px;
                     text-align: center;
+                    margin-left: 0%;
                 }
             }
         }

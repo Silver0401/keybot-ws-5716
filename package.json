@@ -3,17 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@steveeeie/react-page-transition": "^1.2.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "animejs": "^3.2.0",
-    "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "express-ejs-layouts": "^2.5.0",
+    "axios": "^0.20.0",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-particles-js": "^3.3.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-spring": "^9.0.0-rc.3",
@@ -21,8 +19,12 @@
     "react-tsparticles": "^1.17.10",
     "styled-components": "^5.1.1"
   },
+  "proxy": "http://localhost:5000",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cd BackEnd && node server.js",
+    "both-ends": "concurrently \"npm run front-end\" \"npm run back-end\"",
+    "front-end": "react-scripts start",
+    "back-end": "cd BackEnd && WS=development nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -41,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0"
   }
 }

@@ -12,6 +12,8 @@ import HomePage from "./Pages/HomePage";
 import ContactMePage from "./Pages/ContactMePage";
 import AboutPage from "./Pages/AboutPage";
 import LoginPage from "./Pages/LoginPage";
+import UserCreated from "./Pages/UserCreated";
+import LoggedIn from "./Pages/LoggedIn";
 
 //Css Files
 import "./PageStyling/css/Style.css";
@@ -59,6 +61,8 @@ const App = () => {
           <Route exact path="/ContactMePage" component={ContactMePage} />
           <Route exact path="/AboutPage" component={AboutPage} />
           <Route exact path="/LoginPage" component={LoginPage} />
+          <Route exact path="/UserCreated" component={UserCreated} />
+          <Route exact path="/LogedInPage/:id" component={LoggedIn} />
         </Switch>
 
     </div>

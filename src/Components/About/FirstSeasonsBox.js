@@ -11,6 +11,7 @@ const FirstSeasonBox = (props) => {
     const [DSButtonPressed, setDSButton] = useState(false)
     const [IRButtonPressed, setIRButton] = useState(false)
     const [GCButtonPressed, setGCButton] = useState(false)
+    const [AFButtonPressed, setAFButton] = useState(false)
 
     const ResetButtons = () => {
         setRRButton(false)
@@ -20,6 +21,7 @@ const FirstSeasonBox = (props) => {
         setDSButton(false)
         setIRButton(false)
         setGCButton(false)
+        setAFButton(false)
     }
 
     const ButtonAnimation = (desiredColor, name, styleClass) => {
@@ -50,6 +52,9 @@ const FirstSeasonBox = (props) => {
                 break
             case "Game Changers":
                 GlobalButtonState = GCButtonPressed
+                break
+            case "About First":
+                GlobalButtonState = AFButtonPressed
                 break
             default: 
                 GlobalButtonState = "none chosen"
@@ -369,6 +374,21 @@ const FirstSeasonBox = (props) => {
                 )
                 break
 
+            case "About First":
+                renderedButton = (
+                    <div onClick={() => {
+                        ResetButtons()
+                        setAFButton(!AFButtonPressed)
+                        props.ButtonValue("AboutFirst")
+                    }} className={`${styleClass} ${AFButtonPressed ? "ButtonClicked" : "ButtonNotClicked"}`}>
+                        <animated.div className="TBox" style={colorVar}>
+                            <h1>{name}</h1>
+                        </animated.div>
+
+                    </div>
+                )
+                break
+
             default:
                 console.log("an error occurred")
                 break
@@ -396,20 +416,30 @@ const FirstSeasonBox = (props) => {
 
                     {ButtonAnimation("crimson", "Steam Works", "SteamWorks")}
 
-                    {ButtonAnimation("yellow", "Power Up", "PowerUP")}
 
                 </div>
 
-                <div className="BottomBox">
+                <div className="MiddleBox">
+
+                    {ButtonAnimation("yellow", "Power Up", "PowerUP")}
 
                     {ButtonAnimation("orange", "Deep Space", "DeepSpace")}
 
                     {ButtonAnimation("violet", "Infinite Recharge", "InfiniteRecharge")}
 
+                </div>
+
+                <div className="BottomBox">
+
                     {ButtonAnimation("turquoise", "Game Changers", "GameChangers")}
+
+                    {ButtonAnimation("Red", "About First", "AboutFirst")}
+
+
 
                 </div>
             </div>
+
         </div>
     )
 }
