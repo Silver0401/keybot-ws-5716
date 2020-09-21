@@ -12,6 +12,7 @@
     "express-flash": "0.0.2",
     "express-session": "^1.17.1",
     "mongoose": "^5.10.6",
+    "passport": "^0.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
