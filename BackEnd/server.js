@@ -23,10 +23,11 @@ app.use(passport.initialize())
 app.use(passport.session())
 PassportConfig()
 
-app.use(cors({
-    origin: "http://localhost:3000",
-    credentials: true
-}))
+// app.use(cors({
+//     origin: "http://localhost:3000",
+//     credentials: true
+// }))
+
 app.use(session({
     secret: "secretcode",
     resave: true,
