@@ -19,7 +19,7 @@ const Forms = (props) => {
         anime({
             targets: [".LeftEye, .RightEye"],
             duration: 1000,
-            height: "55%"
+            height: "65%"
         })
 
         anime({

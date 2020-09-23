@@ -36,16 +36,17 @@ const CardsBox = () => {
 	const CreateCard = (Name,Img,Bio,Box, AnimID) => {
 		
 		let DesiredCard = (
-
-			<div id={AnimID} onClick={() => FlipCard(AnimID)} className="DisplayCard">
-				<div className="ImgBox">
-					<img id={`${AnimID}Img`} alt="coso" src={Img} ></img>
-					<h4>Click to se Bio</h4>
-				</div>
-				<h1>{Name}</h1>
-				<div id={`${AnimID}Bio`} className="bio"><p>{Bio}</p></div>
-			</div>
-		)
+      <div id={AnimID} onClick={() => FlipCard(AnimID)} className="DisplayCard">
+        <div className="ImgBox">
+          <img id={`${AnimID}Img`} alt="coso" src={Img}></img>
+        </div>
+        <h1>{Name}</h1>
+        <h4>Click to se Bio</h4>
+        <div id={`${AnimID}Bio`} className="bio">
+          <p>{Bio}</p>
+        </div>
+      </div>
+    );
 
 		switch (Box){
 			case "Coaches":

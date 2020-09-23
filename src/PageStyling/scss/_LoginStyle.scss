@@ -48,7 +48,7 @@ $BackgroundColor: rgb(6, 3, 22);
                     position: relative;
                     width: 90%;
                     height: 2px;
-                    font-size: calc(.8em + 1vw);
+                    font-size: calc(.4em + 1.1vw);
                     padding: 20px;
                     color: white;
                     background: transparent;
@@ -110,7 +110,7 @@ $BackgroundColor: rgb(6, 3, 22);
                     width: 100%;
                     background: $BackgroundColor;
                     color: white;
-                    font-size: 20px;
+                    font-size: calc(.8em + 1vw);
                     align-self: center;
                     border: 2px solid $KeyBotColor;
                     transition: background 500ms, color 500ms, border 500ms;
@@ -129,14 +129,15 @@ $BackgroundColor: rgb(6, 3, 22);
                 position: absolute;
                 top: 100px;
                 right: 0%;
-                width: 150px;
+                width: 40%;
                 height: 40px;
+                font-size: calc(.05em + .4vw);
                 // background: white;
                 @include alignCenter();
 
                 label{
                     color: white;
-                    font-size: 15px;
+                    font-size: calc(.8em + 1vw);
                 }
 
                 input{
@@ -210,6 +211,11 @@ $BackgroundColor: rgb(6, 3, 22);
             cursor: pointer;
             color: white;
             background: transparent;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             // border: 2px solid white;
             text-align: center;
             line-height: 45px;
@@ -235,6 +241,11 @@ $BackgroundColor: rgb(6, 3, 22);
             cursor: pointer;
             color: white;
             background: transparent;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             // border: 2px solid white;
             text-align: center;
             line-height: 45px;
@@ -269,7 +280,6 @@ $BackgroundColor: rgb(6, 3, 22);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        // background: white;
 
         @mixin armAnatomy {
             position: absolute;
@@ -326,8 +336,8 @@ $BackgroundColor: rgb(6, 3, 22);
 
             .Iris{
                 position: absolute;
-                width: 17px;
-                height: 17px;
+                width: 50%;
+                height: 50%;
                 background: rgb(21, 11, 75);
                 border-radius: 50%;
                 border: 4px solid black;
@@ -340,8 +350,8 @@ $BackgroundColor: rgb(6, 3, 22);
                     top: 0%;
                     right: 0%;
 
-                    width: 5px;
-                    height: 5px;
+                    width: 50%;
+                    height: 50%;
                     background: white;
                     border-radius: 50%;
                 }
@@ -440,5 +450,62 @@ $BackgroundColor: rgb(6, 3, 22);
     }
     100%{
         background-position-x: 400%;
+    }
+}
+
+@media (min-width: 1900px){
+    .LoginPage{
+        width: 1000px;
+
+        .ButtonsBox{
+            .LogInButton, .SignUpButton{
+                height: 90px;
+            }
+        }
+
+        .LoginFormBox, .SignUpFormBox{
+
+            form{
+                .CheckBox{
+    
+                    top: 220px;
+    
+                    input{
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+    
+                .CheckBox2{
+                    top: 50px;   
+                }
+
+                .Row{
+                    #subButton{
+                        height: 100px;
+
+                    }
+                }
+            }
+
+        }
+
+        .BotAnim{
+
+            .eyesBox{
+            
+                width: 45%;
+                height: 25%;
+
+                .LeftEye{
+                    width: 90px;
+                    height: 90px;
+                }
+
+                .Mouth{
+                    margin-top: 90px;
+                }
+            }
+        }
     }
 }

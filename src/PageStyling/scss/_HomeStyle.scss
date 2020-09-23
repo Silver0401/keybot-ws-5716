@@ -124,7 +124,7 @@ $DarkTheme: rgb(6, 3, 22);
                 position: relative;
                 overflow: hidden;
                 
-                border-radius: 25px;
+                border-radius: 50%;
                 @include BlinkAnimation();
             }
 
@@ -651,6 +651,13 @@ $DarkTheme: rgb(6, 3, 22);
 
     }
 
+}
+
+@media (min-width: 1990px){
+
+    .HomePage{
+        grid-template-columns: 1fr 1250px 1fr;
+    }
 }
 
 

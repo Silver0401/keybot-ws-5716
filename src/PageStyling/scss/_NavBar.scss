@@ -22,7 +22,6 @@ $KeyBotColor: #00CDFF;
     width:50px;
     height: 50px;
     cursor: pointer;
-    margin-top: 20px;
 
     display: flex;
     flex-direction: column;
@@ -51,6 +50,11 @@ $KeyBotColor: #00CDFF;
     left: 1%;
     opacity: 1;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
     background: linear-gradient(to right, rgb(6, 42, 88) , $KeyBotColor);
 
     p{
@@ -60,7 +64,6 @@ $KeyBotColor: #00CDFF;
     .Logo{
         position: absolute;
         left: 5%;
-        margin-top: 25px;
         text-shadow: 0px 0px 3px white;
 
         font-size:35px;
@@ -337,4 +340,10 @@ $KeyBotColor: #00CDFF;
     }  
 }
 
+@media (min-width: 1900px){
+
+    .GlobalNavBar{
+        height: 120px;
+    }
+}
 

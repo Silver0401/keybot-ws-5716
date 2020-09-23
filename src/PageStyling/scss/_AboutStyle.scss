@@ -197,6 +197,7 @@ $UnclickedButtonColor: rgb(96, 99, 96);
         grid-area: FSeasonsBox;
         .title{
             position: relative;
+            font-size: calc(1em + 1vw);
         }
 
         // background: white;
@@ -299,7 +300,9 @@ $UnclickedButtonColor: rgb(96, 99, 96);
 
                 .AboutFirst{
                     .TBox{
-                        width: 40%;
+                        width: 80%;
+                        height: 40%;
+                
                     }
                 }
             }
@@ -538,8 +541,13 @@ $UnclickedButtonColor: rgb(96, 99, 96);
                 }
 
                 h1{
-                    padding-top: 20px;
+                    padding-top: 10px;
                     height: 15%;
+                }
+
+                h4{
+                    padding-bottom: 20px;
+                    font-size: calc(1em + .5vw);
                 }
 
             }
@@ -729,7 +737,7 @@ $UnclickedButtonColor: rgb(96, 99, 96);
             text-align: center;
             padding-bottom: 40px;
             // background: lightyellow;
-
+            font-size: calc(.5em + 1vw);
         }
 
         .TopRow{
@@ -845,8 +853,73 @@ $UnclickedButtonColor: rgb(96, 99, 96);
     }
 }
 
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
+@media (min-width: 1900px){
+    .AboutPage{
+        grid-template-rows: 85vh 700px 1200px 800px 1500px 150px;
 
+        .FirstInfoBox{
+            .wrapper{
+                .Info{
+                    .Paragraph{
+                        font-size: 25px;
+                    }
+                }
+            }   
+        }
+
+        .FirstSeasonsBox{
+            .ButtonBox{
+                .TopBox, .BottomBox, .MiddleBox{
+                    .ButtonNotClicked{
+                        width: 200px;
+                        height: 200px;
+                        .TBox{
+                            font-size: 29px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .CardsBox{
+            .LargeCardsBox, .SmallCardsBox{
+
+                .Card{
+                    width: 480px;
+
+                    h2{
+                        font-size: 50px;
+                        top: -10%;
+                    }
+
+                    .DisplayCard{
+
+                        .ImgBox{
+                            h4{
+                                margin: 20px;
+                                font-size: 30px;
+                            }
+                        }
+
+                        h1{
+                            font-size: 45px;    
+                        }
+                    }
+                }
+            }
+        }
+
+        .Gallery{
+
+
+
+            .TopRow, .MiddleRow{
+                .Container1, .Container2{
+                    .ImgSpace{
+                        width: 1000px;
+                    }
+                }
+            }
+        }
+    }
 }

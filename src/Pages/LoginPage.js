@@ -55,7 +55,7 @@ const LoginPage = () => {
       anime({
         targets: [".LeftEye, .RightEye"],
         duration: 1000,
-        height: "40px"
+        height: "60%"
       })
 
       anime({
@@ -135,7 +135,7 @@ const LoginPage = () => {
                 enable: true,
                 outMode: "bounce",
                 random: false,
-                speed: 6,
+                speed: 3,
                 straight: false,
               },
               number: {
@@ -143,7 +143,7 @@ const LoginPage = () => {
                   enable: true,
                   value_area: 800,
                 },
-                value: 50,
+                value: 25,
               },
               opacity: {
                 value: 0.5,

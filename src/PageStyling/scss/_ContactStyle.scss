@@ -208,3 +208,16 @@ $ButtonColor: white;
     }
 }
 
+@media (min-width: 1990px){
+    .ContactMePage{
+
+        margin-top: 250px;
+
+        .SocialMediaBox{
+            a{
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
+}
