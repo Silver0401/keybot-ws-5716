@@ -11,7 +11,8 @@ $ButtonColor: white;
     background:$BackgroundColor;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    // grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas:
     "SocialMediaBox MailBox";
@@ -199,7 +200,8 @@ $ButtonColor: white;
 
 @media (max-width: 1200px){
     .ContactMePage{
-        grid-template-rows: 550px 550px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 800px 500px;
         grid-template-areas: 
         "MailBox"
         "SocialMediaBox";

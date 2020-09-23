@@ -45,7 +45,11 @@
 
     .ContactMePage{
 
+        grid-template-columns: 1fr;
         grid-template-rows: 700px 1fr;
+        grid-template-areas:
+        "MailBox"
+        "SocialMediaBox";
 
         .SocialMediaBox{
 
@@ -154,6 +158,7 @@
         width: 100%;
         height: 100%;
     }
+
     .LoginPage{
         height: 70%;
         width: 90%;
