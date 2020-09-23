@@ -18,6 +18,14 @@ import SalmaFoto from "../../Resources/Salma.jpg";
 import siwaFoto from "../../Resources/siwa.jpg";
 import OsbaldoFoto from "../../Resources/Osbaldo.jpg";
 import MagalyFoto from "../../Resources/magaly.jpg";
+import EuegeFoto from "../../Resources/euge.jpg";
+import AleFoto from "../../Resources/ale.jpg";
+import ItzelFoto from "../../Resources/Itzel.jpg";
+import NadiaFoto from "../../Resources/nadia.jpg";
+import KarlaFoto from "../../Resources/karla.jpg";
+import MemeFoto from "../../Resources/guille.jpg";
+import PaolaFoto from "../../Resources/paola.jpg";
+
 
 // Bios
 
@@ -31,22 +39,37 @@ const DavoBio = "Para mí Keybot significa más que un equipo de robótica, es u
 const MagalyBio = "Licenciada en Mercadotecnia Internacional con experiencia en organización de eventos, promoción y administración de nómina, así como en creación y desarrollo del departamento de promoción de un Colegio en la Ciudad de México. Actualmente apoyo en redes sociales y desarrollo de nuevos productos en una empresa dulcera de México y participando como mentora en el área de mercadotecnia de ¡Keybot!"
 const LuisBio = "Luis Enrique Sánchez, profesor del departamento de Ciencias de PrepaTec. Mi historia en Keybot comenzó en el 2019 cuando me invitan a participar como Head Coach. En esa temporada tuvimos la oportunidad de quedar como finalistas en el regional de Campus Santa Fe, lo que nos dio el pase al Campeonato Mundial en Houston. \"Keybot me ha enseñado el gran potencial que tienen nuestros alumnos cuando persiguen sus sueños con pasión y disciplina\". "
 const OsbaldoBio = "Osbaldo Becerra, profesor del Tecnológico de Monterrey con una Maestría en ciencias en electrónica, diseño de circuitos integrados. Posgrado en el instituto nacional de astrofísica, óptica y electrónica (INAOE), en Tonantzinta, Puebla. Experiencia en diferentes áreas y empresas como electro fotónica y diseño electrónico en Axón, líder de ingeniería para creación del canal 26 del gobierno del estado de Puebla, en la transmisión de señal de tv en Once TV y catedrático en la Universidad politécnica de Pachuca. Actualmente apoya como mentor de electrónica al equipo de Keybot!"
+// Sofia bio missing (temporal bio)
+const SofiaBio = "Sofía González Bustamante alumna de 3er semestre que ha formado parte del equipo desde que entro a Prepa Tec. La temporada pasada ella estuvo dentro del área de mecánica y diseño, en la cual tuvo un gran desempeño y un amplio aprendizaje. Participó en el regional de FIRST en Monterrey en el 2020, donde fue parte de los pits. Ella muestra bastante interés en programas y proyectos de acción social. Tiene un gran desempeño académico que se demuestra con el cumplimiento y la conservación de la beca de talento académico, aparte de llevar un promedio de 98.";
+const AbiBio = "Mi nombre es Karla Abigail Henkel Bustamante. Soy la líder de finanzas. La mayoría me llama Aby o Karla. Me gusta bailar, cantar y jugar tenis.";
+// Rodrigo bio missing (temporal bio)
+const RodriBio = "Rodrigo Vázquez Hernández. Alumno de tercer semestre que ha formado parte del equipo durante todo su primer año de preparatoria. Ha estado en el área de administración y ha desempeñado tareas de mercadotecnia y scouting. Asistió al regional de Monterrey 2020. Ha participado en grupos estudiantiles como teateTie HidalMUN. Tiene un promedio de 97. ";
+const MariBio = "Mi nombre es Mariana, y me gusta que me digan así. Tengo 17 años y soy líder de patrocinios. Un fun fact mío es que me encantan las series de repostería.";
+const AleBio = "Me llamo Alessa, me gusta que me digan Ale y tengo 17 años. Soy la presidenta de la gestión 2020 - 2021 de Keybot. Considero que nuestro equipo, más que un equipo, es una familia. Un fun fact acerca de mi es que: adoro a los animales, a tal punto que he tenido desde perros y gatos, hasta conejos y patos. "
+const ItzelBio = "Soy Itzel Castellanos, tengo 17 años y soy líder de Chairman's, me gusta todo lo relacionado con las artes en especial la música y el dibujo, un fun fact sobre mi es que soy muy distraída con mis cosas, un día llegue a perder un solo zapato en el Schoolastico"
+const EugeBio = "Hola! Soy Eugenia De Jesus Rangel tengo 17 años. Soy la Líder del área de programación/electrónica y vicepresidenta del equipo para esta gestión de 2020 a 2021. Fun fact: Me gusta andar en motocicleta.";
+const NadiaBio = "Hola me llamo Nadia Belem, me gust que me digan nadia y detesto el nombre de belem. Tengo 17 años y soy la lider del área de mercadotecnia de la gestión 2020 - 2021. Un random fact mio: Me gusta viajar mucho y adoro los chihuahas."
+// Bennet bio missing (temporal bio)
+const BennetBio = ""
+// Karla bio missing (temporal bio)
+const KarlaBio = "Karla Yenitzia Alducin Guzmán, alumna de 5to semestre ha sido parte de grupos estudiantiles como Around World. Le interesan las actividades sociales en las cuales se requiere apoyo y organización en diferentes áreas así como programación. Ha participado en grupos académicos como HIDALMUN en el cual representó a Sudán del Sur. ";
+const MemeBio = "Estudiante del tecnológico de Monterrey campus Hidalgo,ex-Columbia,líder de neumática ,18 años de edad,le gusta el synthwave y odia la banda/reggaetón/cumbia Fun fact: me llaman meme (no pregunten)"
+// Paola bio missing (temporal bio)
+const PaolaBio = "Paola Salomón del Arenal, alumna de quinto semestre. Actualmente tiene un promedio de 98. Forma parte del equipo de First desde hace un año. Ha participado en varios proyectos de acción social, así como responsable y fundadora de Ecyd Pachuca, misionera desde hace 4 años, clown de hospital de Contagia Alegría,  voluntaria de Cuéntame tu Sueño, también ha participado en Macro eventos del día del niño y navidad de Soñar Despierto. ";
 
 const CardsBox = () => {
+  const [MentorsCounter, changeMentorsCounter] = useState(0);
+  const [CoachesCounter, changeCoachesCounter] = useState(0);
+  const [LeadersCounter, changeLeadersCounter] = useState(0);
+  let counter = 0;
+  let prev_target = "none";
 
-	const [MentorsCounter, changeMentorsCounter] = useState(0)
-	const [CoachesCounter, changeCoachesCounter] = useState(0)
-	const [LeadersCounter, changeLeadersCounter] = useState(0)
-	let counter = 0
-	let prev_target = "none"
+  let CoachesCardList = [];
+  let MentorsCardList = [];
+  let LeadersCardList = [];
 
-	let CoachesCardList = []
-	let MentorsCardList = []
-	let LeadersCardList = []
-
-	const CreateCard = (Name,Img,Bio,Box, AnimID) => {
-		
-		let DesiredCard = (
+  const CreateCard = (Name, Img, Bio, Box, AnimID) => {
+    let DesiredCard = (
       <div id={AnimID} onClick={() => FlipCard(AnimID)} className="DisplayCard">
         <div className="ImgBox">
           <img id={`${AnimID}Img`} alt="coso" src={Img}></img>
@@ -59,232 +82,236 @@ const CardsBox = () => {
       </div>
     );
 
-		switch (Box){
-			case "Coaches":
-				CoachesCardList.push(DesiredCard);
-				break
-			case "Mentors":
-				MentorsCardList.push(DesiredCard);
-				break
-			case "Leaders":
-				LeadersCardList.push(DesiredCard);
-				break
-			default:
-		}
+    switch (Box) {
+      case "Coaches":
+        CoachesCardList.push(DesiredCard);
+        break;
+      case "Mentors":
+        MentorsCardList.push(DesiredCard);
+        break;
+      case "Leaders":
+        LeadersCardList.push(DesiredCard);
+        break;
+      default:
+    }
+  };
 
-	}
+  const SwapDisplayedCard = (boxName, arrowDirection) => {
+    switch (boxName) {
+      case "Mentors":
+        if (
+          arrowDirection === "right" &&
+          MentorsCounter < MentorsCardList.length - 1
+        ) {
+          changeMentorsCounter(MentorsCounter + 1);
+        } else if (arrowDirection === "right") {
+          changeMentorsCounter(0);
+        }
 
-	const SwapDisplayedCard = (boxName, arrowDirection) => {
+        if (arrowDirection === "left" && MentorsCounter !== 0) {
+          changeMentorsCounter(MentorsCounter - 1);
+        } else if (arrowDirection === "left") {
+          changeMentorsCounter(MentorsCardList.length - 1);
+        }
+        break;
+      case "Coaches":
+        if (
+          arrowDirection === "right" &&
+          CoachesCounter < CoachesCardList.length - 1
+        ) {
+          changeCoachesCounter(CoachesCounter + 1);
+        } else if (arrowDirection === "right") {
+          changeCoachesCounter(0);
+        }
 
-		switch (boxName){
-			case "Mentors":
-				if (arrowDirection === "right" && MentorsCounter < MentorsCardList.length -1 ) {
-					changeMentorsCounter(MentorsCounter + 1) 
-		} else if (arrowDirection === "right") {
-		  changeMentorsCounter(0) 
-		}
-			  
-				if (arrowDirection === "left" && MentorsCounter !== 0){
-					changeMentorsCounter(MentorsCounter - 1);
-				} else if (arrowDirection === "left") {
-					changeMentorsCounter(MentorsCardList.length - 1);
-				}
-				break
-			case "Coaches":
-				if (arrowDirection === "right" && CoachesCounter < CoachesCardList.length - 1) {
-					changeCoachesCounter(CoachesCounter + 1)
-				} else if (arrowDirection === "right") {
-					changeCoachesCounter(0)
-				}
+        if (arrowDirection === "left" && CoachesCounter !== 0) {
+          changeCoachesCounter(CoachesCounter - 1);
+        } else if (arrowDirection === "left") {
+          changeCoachesCounter(CoachesCardList.length - 1);
+        }
+        break;
+      case "Leaders":
+        if (
+          arrowDirection === "right" &&
+          LeadersCounter < LeadersCardList.length - 1
+        ) {
+          changeLeadersCounter(LeadersCounter + 1);
+        } else if (arrowDirection === "right") {
+          changeLeadersCounter(0);
+        }
 
-				if (arrowDirection === "left" && CoachesCounter !== 0) {
-					changeCoachesCounter(CoachesCounter - 1);
-				} else if (arrowDirection === "left") {
-					changeCoachesCounter(CoachesCardList.length - 1);
-				}
-				break
-			case "Leaders":
-				if (arrowDirection === "right" && LeadersCounter < LeadersCardList.length - 1) {
-					changeLeadersCounter(LeadersCounter + 1)
-				} else if (arrowDirection === "right") {
-					changeLeadersCounter(0)
-				}
+        if (arrowDirection === "left" && LeadersCounter !== 0) {
+          changeLeadersCounter(LeadersCounter - 1);
+        } else if (arrowDirection === "left") {
+          changeLeadersCounter(LeadersCardList.length - 1);
+        }
+        break;
+      default:
+    }
+  };
 
-				if (arrowDirection === "left" && LeadersCounter !== 0) {
-					changeLeadersCounter(LeadersCounter - 1);
-				} else if (arrowDirection === "left") {
-					changeLeadersCounter(LeadersCardList.length - 1);
-				}
-				break
-			default:
-		}
-	}
+  const DisplayCardsList = (ListToDisplay) => {
+    switch (ListToDisplay) {
+      case "Coaches":
+        return CoachesCardList[CoachesCounter];
+      case "Mentors":
+        return MentorsCardList[MentorsCounter];
+      case "Leaders":
+        return LeadersCardList[LeadersCounter];
+      default:
+    }
+  };
 
-	const DisplayCardsList = (ListToDisplay) => {
+  const FlipCard = (target) => {
+    if (prev_target !== target) {
+      counter = 0;
+    }
 
-		switch (ListToDisplay){
-			case "Coaches":
-				return CoachesCardList[CoachesCounter]; 
-			case "Mentors":
-				return MentorsCardList[MentorsCounter]; 
-			case "Leaders":
-				return LeadersCardList[LeadersCounter]; 
-			default:
-		}
-	}
+    console.log(target);
+    if (counter % 2 === 0) {
+      anime({
+        targets: `#${target}`,
+        duration: 4000,
+        rotateX: "180",
+      });
 
-	const FlipCard = (target) => {
-		if (prev_target !== target){
-			counter = 0
-		}
+      anime({
+        targets: `#${target}Img`,
+        duration: 4000,
+        opacity: 0,
+      });
 
-		console.log(target)
-		if (counter % 2 === 0){
-			anime({
-				targets: `#${target}`,
-				duration: 4000,
-				rotateX: "180"
-			})
+      anime({
+        targets: `#${target}Bio`,
+        duration: 4000,
+        opacity: 1,
+      });
+    } else {
+      anime({
+        targets: `#${target}`,
+        duration: 4000,
+        rotateX: "0",
+      });
 
-			anime({
-				targets: `#${target}Img`,
-				duration: 4000,
-				opacity: 0
-			})
+      anime({
+        targets: `#${target}Img`,
+        duration: 4000,
+        opacity: 1,
+      });
 
-			anime({
-				targets: `#${target}Bio`,
-				duration: 4000,
-				opacity: 1
-			})
+      anime({
+        targets: `#${target}Bio`,
+        duration: 4000,
+        opacity: 0,
+      });
+    }
+    prev_target = target;
+    counter += 1;
+  };
 
-		} else {
-			anime({
-				targets: `#${target}`,
-				duration: 4000,
-				rotateX: "0"
-			})				
-		
-			anime({
-				targets: `#${target}Img`,
-				duration: 4000,
-				opacity: 1
-			})
+  const CreateBio = (Info) => {
+    return <p>{Info}</p>;
+  };
 
-			anime({
-				targets: `#${target}Bio`,
-				duration: 4000,
-				opacity: 0
-			})
-		}
-		prev_target = target
-		counter += 1
-	}
+  CreateCard("Ismael M.C.", IsmaFoto, IsmaBio, "Mentors", "card1");
+  CreateCard("Emiliano L.C", EmiFoto, EmiBio, "Mentors", "card2");
+  CreateCard("Guillermo", MemoFoto, MemoBio, "Mentors", "card3");
+  CreateCard("Davo E.", davoFoto, DavoBio, "Mentors", "card7");
+  CreateCard("Salma", SalmaFoto, "missing bio", "Mentors", "card9");
+  CreateCard("Silvana T.", siwaFoto, SiwaBio, "Mentors", "card10");
 
-	const CreateBio = (Info) => {
-		return(
-			<p>
-				{Info}
-			</p>
-		)
-	}
-	  
-	CreateCard("Ismael M.C.", IsmaFoto, IsmaBio, "Mentors", "card1") 
-	CreateCard("Emiliano L.C", EmiFoto, EmiBio, "Mentors", "card2") 
-	CreateCard("Guillermo", MemoFoto, MemoBio, "Mentors", "card3") 
-	CreateCard("Davo E.", davoFoto, DavoBio, "Mentors", "card7")
-	CreateCard("Salma", SalmaFoto, "missing bio", "Mentors", "card9")
-	CreateCard("Silvana T.", siwaFoto, SiwaBio, "Mentors", "card10")
+  CreateCard("Nadia B.", NadiaFoto, NadiaBio, "Leaders", "card20") 
+  CreateCard("Alessa M.C", AleFoto, AleBio, "Leaders", "card18") 
+  CreateCard("Sofia G.", SofiFoto, SofiaBio, "Leaders", "card4"); // ---
+  CreateCard("Abigail H.", AbiFoto, AbiBio, "Leaders", "card5"); // Ya esta bio
+  CreateCard("Rodrigo V.", rodriFoto, RodriBio, "Leaders", "card6"); // ---
+  CreateCard("Mariana M.", mariFoto, MariBio, "Leaders", "card8"); // Ya esta bio
+  CreateCard("Euegenia", EuegeFoto, EugeBio, "Leaders", "card17") 
+  CreateCard("Itzel C.", ItzelFoto, ItzelBio, "Leaders", "card19") 
+  CreateCard("Karla Y.", KarlaFoto, KarlaBio, "Leaders", "card22")
+  CreateCard("Guillermo M.H.", MemeFoto, MemeBio, "Leaders", "card23")
+  CreateCard("Paola S.", PaolaFoto, PaolaBio, "Leaders", "card24")
 
-	CreateCard("Sofia", SofiFoto, "missing bio", "Leaders", "card4")
-	CreateCard("Abigail H.", AbiFoto, "missing bio", "Leaders", "card5")
-	CreateCard("Rodrigo", rodriFoto, "missing bio", "Leaders", "card6")
-	CreateCard("Mariana", mariFoto, "missing bio", "Leaders", "card8")
+  // CreateCard("Bennet A.", mariFoto, MariBio, "Leaders", "card21")
 
-	CreateCard("Magaly", MagalyFoto, MagalyBio, "Coaches", "card16")
-	CreateCard("Paola P.E.", PaliFoto, PaliBio, "Coaches", "card12")
-	CreateCard("Eguzki A.M.", eguzFoto, EguzBio, "Coaches", "card13")
-	CreateCard("Luis S.G.", QuiquinFoto, LuisBio, "Coaches", "card11")
-	CreateCard("Carlos M.D.", mayaFoto, "missing bio", "Coaches", "card14")
-	CreateCard("Osbaldo B.", OsbaldoFoto, OsbaldoBio, "Coaches", "card15")
+  CreateCard("Eguzki A.M.", eguzFoto, EguzBio, "Coaches", "card13");
+  CreateCard("Magaly", MagalyFoto, MagalyBio, "Coaches", "card16");
+  CreateCard("Paola P.E.", PaliFoto, PaliBio, "Coaches", "card12");
+  CreateCard("Luis S.G.", QuiquinFoto, LuisBio, "Coaches", "card11");
+  CreateCard("Carlos M.D.", mayaFoto, "missing bio", "Coaches", "card14");
+  CreateCard("Osbaldo B.", OsbaldoFoto, OsbaldoBio, "Coaches", "card15");
 
-	return (
-	  <div className="CardsBox">
+  return (
+    <div className="CardsBox">
+      <div className="LargeCardsBox">
+        <div className="Card">
+          <h2>Mentors</h2>
 
-		<div className="LargeCardsBox">
+          {DisplayCardsList("Mentors")}
 
-			<div className="Card">
-				<h2>Mentors</h2>
+          <div className="SwapCard">
+            <div
+              onClick={() => SwapDisplayedCard("Mentors", "left")}
+              className="leftArrowBox"
+            >
+              <div className="triangle"></div>
+            </div>
+            <div
+              onClick={() => SwapDisplayedCard("Mentors", "right")}
+              className="rightArrowBox"
+            >
+              <div className="triangle"></div>
+            </div>
+          </div>
+        </div>
 
-				{DisplayCardsList("Mentors")}
+        <div className="Card">
+          <h2>Leaders</h2>
 
-				<div className="SwapCard">
-					<div
-						onClick={() => SwapDisplayedCard("Mentors", "left")}
-						className="leftArrowBox"
-					>
-						<div className="triangle"></div>
-					</div>
-					<div
-						onClick={() => SwapDisplayedCard("Mentors", "right")}
-						className="rightArrowBox"
-					>
-						<div className="triangle"></div>
-					</div>
-				</div>
-			</div>
+          {DisplayCardsList("Leaders")}
 
-			<div className="Card">
-				<h2>Leaders</h2>
+          <div className="SwapCard">
+            <div
+              onClick={() => SwapDisplayedCard("Leaders", "left")}
+              className="leftArrowBox"
+            >
+              <div className="triangle"></div>
+            </div>
 
-				{DisplayCardsList("Leaders")}
+            <div
+              onClick={() => SwapDisplayedCard("Leaders", "right")}
+              className="rightArrowBox"
+            >
+              <div className="triangle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-				<div className="SwapCard">
-					<div
-						onClick={() => SwapDisplayedCard("Leaders", "left")}
-						className="leftArrowBox"
-					>
-						<div className="triangle"></div>
-					</div>
+      <div className="SmallCardsBox">
+        <div className="Card">
+          <h2>Coaches</h2>
 
-					<div
-						onClick={() => SwapDisplayedCard("Leaders", "right")}
-						className="rightArrowBox"
-					>
-						<div className="triangle"></div>
-					</div>
-				</div>
-			</div>
+          {DisplayCardsList("Coaches")}
 
-		</div>
-
-		<div className="SmallCardsBox">
-
-			<div className="Card">
-				<h2>Coaches</h2>
-
-				{DisplayCardsList("Coaches")}
-
-				<div className="SwapCard">
-					<div
-						onClick={() => SwapDisplayedCard("Coaches", "left")}
-						className="leftArrowBox"
-					>
-						<div className="triangle"></div>
-					</div>
-					<div
-						onClick={() => SwapDisplayedCard("Coaches", "right")}
-						className="rightArrowBox"
-					>
-						<div className="triangle"></div>
-					</div>
-				</div>
-			</div>
-		
-		</div>
-
-	  </div>
-	);
+          <div className="SwapCard">
+            <div
+              onClick={() => SwapDisplayedCard("Coaches", "left")}
+              className="leftArrowBox"
+            >
+              <div className="triangle"></div>
+            </div>
+            <div
+              onClick={() => SwapDisplayedCard("Coaches", "right")}
+              className="rightArrowBox"
+            >
+              <div className="triangle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default CardsBox
