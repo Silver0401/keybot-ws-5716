@@ -199,6 +199,7 @@ $DarkTheme: rgb(6, 3, 22);
         }
 
     }
+
     .LeftBox{
         @include ChangeTheme($ThemeColorDark: true);
         grid-area: LeftBox;
@@ -456,12 +457,12 @@ $DarkTheme: rgb(6, 3, 22);
                 h1{
                     color: $BackgroundColor;
                     // letter-spacing: 20px;
-                    font-size: 30px;
+                    font-size: calc(1.3em + .3vw);
                     display: inline;
                 }
                 p{
                     display: inline;
-                    font-size: 12px;
+                    font-size: calc(.4em + .1vw);
                 }
             }
         }

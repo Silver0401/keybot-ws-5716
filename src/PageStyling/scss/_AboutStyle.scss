@@ -532,11 +532,16 @@ $UnclickedButtonColor: rgb(96, 99, 96);
                     transform: rotateX(180deg);
                     @include alignCenter();
                     flex-direction: column;
+                    // overflow: auto;
+
                     p{
                         width: 75%;
+                        height: 70%;
                         position: relative;
-                        padding: 0px 0px;
+                        padding: 20px 0px;
                         // background-color: blue;
+
+                        overflow: auto;
                     }
                 }
 

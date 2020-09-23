@@ -19,7 +19,14 @@ import siwaFoto from "../../Resources/siwa.jpg";
 
 // Bios
 
-const IsmaBio = "Creator of this website, currently studying medicine and a full stack web-developer, That's me. If you wanna know more about me here's the link to my Personal WebSite: https://silver0401 .github.io/"
+const IsmaBio = "Creador de la pagina. Ismael Muñoz Contreras, o mejor conocido como shelas, es actualmente un full stack web developer, con conocmientos avanzados de programación, electrónica y robótica. Asimismo, estudia actualmente la carrera de Medico Cirujano en el Tec de Monterrey campus Monterrey"
+const EmiBio = "Emiliano León Chavez: Shaggy para los amigos, me gusta programar, el arte y la salsa cheesy jalapeño con la corteza de la pizza. Si me ves algún día en el equipo puedes contar que te voy a ayudar."
+const MemoBio = "Guillermo Navarro - Tesorero 2017-2018 / Jefe de mecánica 2017-2018 / Mentor 2018-2019 / Inicie como un miembro de mecánica y poco a poco desarrolle una gran pasión por el equipo, aprendí más cosas de las que pense, desde diseño hasta un poco de administración al ser parte de la mesa directiva en 2017. Conocí a grandes personas y forme bellas amistades aquí, que aunque hemos tomado caminos diferentes, las sigo estimando demasiado. Tanto me lleno la experiencia en el grupo que pase de querer ser médico a ingeniero, y actualmente estudio robótica, Esta experiencia es una que simplemente no puedes dejar pasar."
+const EguzBio = "He sido un mentor de programación para la \"First Robotics Competition\" (FRC) del equipo #5716 desde 2015. FRC Siempre es un desafío, ya que al competir contra más inteligentes y experimentados creadores de robots en el mundo, te ves en la obligación de seguir programando y enseñando de una manera impecable. Eguzki fue el primer mentor de programación del equipo y es muy querido entre toda la comunidad de Keybot, el es la razón de que muchos jovenes hoy en día se entusiasmen por la robótica y la programación. Como una nota del creador de la página: Eguzki es el mejor mentor de programación que he tenido, pero más que eso siempre será mi amigo."
+const PaliBio = "Paola Elinora Parga Saucedo mejor conocida como Paly Parga es directora del área de Liderazgo y Vivencia en el Tecnológico de Monterrey. Tiene una licenciatura en administración de empresas por el Tecnológico de Monterrey, además de contar con una maestría y doctorado en Imagen Publica por el Colegio de consultores en Imagen Pública. Ella cree que todo es perfectible y que todo lo que se propongan se puede realizar con pasión. ";
+const SiwaBio = "Silvana Torres Ferrera estudia el 8vo semestre de contabilidad y finanzas. Su historia en Keybot comenzó en el 2014 cuando junto con algunos amigos fundaron el equipo. Para la temporada 2015 fue líder del equipo y al graduarse de preparatoria continuo como mentor Jr. en el área de administración. \"Keybot me enseñó a soñar y a llegar al mundial de robótica, definitivamente me cambió la vida y es increíble ver cómo años después le sigue cambiando la vida a las nuevas generaciones\""
+const DavoBio = "Para mí Keybot significa más que un equipo de robótica, es una familia que día a día crece más, una familia que al llegar a ella nunca deja de sorprendente, te enseña no sólo sobre tu área sino de la vida en general, te da competencias y habilidades que en ningún otro lado vas a encontrar, las personas con las que te encuentras pasan a convertirse de completos desconocidos a tus hermanos. Las experiencias que te deja a lo largo del camino siempre te enseñan algo y te vuelven mejor alumno y persona. Agradezco infinitamente a Keybot por lo que me enseñó a lo largo de mi prepa y me llevo todas las experiencias y sobre todo una gran familia a la que uno siempre va a pertenecer. Keybot es un cachito de mí.";
+
 
 const CardsBox = () => {
 
@@ -179,8 +186,8 @@ const CardsBox = () => {
 	}
 	  
 	CreateCard("Ismael M.C.", IsmaFoto, IsmaBio, "Mentors", "card1") 
-	CreateCard("Emiliano L.C", EmiFoto, "esta es mi bio", "Mentors", "card2") 
-	CreateCard("Guillermo", MemoFoto, "esta es mi bio", "Mentors", "card3") 
+	CreateCard("Emiliano L.C", EmiFoto, EmiBio, "Mentors", "card2") 
+	CreateCard("Guillermo", MemoFoto, MemoBio, "Mentors", "card3") 
 	CreateCard("Davo E.", davoFoto, "esta es mi bio", "Mentors", "card7")
 	CreateCard("Salma", SalmaFoto, "esta es mi bio", "Mentors", "card9")
 	CreateCard("Silvana T.", siwaFoto, "esta es mi bio", "Mentors", "card10")
@@ -190,9 +197,9 @@ const CardsBox = () => {
 	CreateCard("Rodrigo", rodriFoto, "esta es mi bio", "Leaders", "card6")
 	CreateCard("Mariana", mariFoto, "esta es mi bio", "Leaders", "card8")
 
-	CreateCard("Luis S.G.", QuiquinFoto, "esta es mi bio", "Coaches", "card11")
 	CreateCard("Paola P.E.", PaliFoto, "esta es mi bio", "Coaches", "card12")
-	CreateCard("Eguzki A.M.", eguzFoto, "esta es mi bio", "Coaches", "card13")
+	CreateCard("Eguzki A.M.", eguzFoto, EguzBio, "Coaches", "card13")
+	CreateCard("Luis S.G.", QuiquinFoto, "esta es mi bio", "Coaches", "card11")
 	CreateCard("Carlos M.D.", mayaFoto, "esta es mi bio", "Coaches", "card14")
 
 	return (

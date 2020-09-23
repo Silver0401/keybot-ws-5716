@@ -113,7 +113,7 @@ const ContactMePage = () => {
                     enable: true,
                     value_area: 800,
                   },
-                  value: 50,
+                  value: 25,
                 },
                 opacity: {
                   value: 0.5,

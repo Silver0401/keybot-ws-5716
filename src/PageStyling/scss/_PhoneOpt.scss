@@ -32,9 +32,6 @@
                     height: 35%;
 
                 }   
-                .RightEyeOpened{
-                    // @extend .LeftEyeOpened
-                }
             }
         }
 
@@ -168,6 +165,7 @@
 
             .eyesBox{
 
+                // background-color: lightcoral;
                 .Iris{
                     width: 13px;
                     height: 13px;
@@ -176,6 +174,21 @@
                 .LeftEye{
                     width: 30px;
                     height: 30px;
+                }
+            }
+
+            #leftArm, #rightArm{
+
+                width: 120px;
+                height: 120px;
+
+                .ArmStructure{
+                    width: 40px;
+                    height: 70px;
+                }
+                .Hand{
+                    width: 20px;
+                    height: 20px;
                 }
             }
         }

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import KeybotImg from "./../../Resources/KeybotL.png"
+import KeybotImg from "./../../Resources/KeybotL2.png"
 
 const HomeImgBox = () => {
 

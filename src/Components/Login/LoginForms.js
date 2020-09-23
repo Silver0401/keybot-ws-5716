@@ -77,8 +77,8 @@ const Forms = (props) => {
         anime({
             targets: "#leftArm",
             duration: 2000,
-            translateX: -40,
-            translateY: 40,
+            translateX: "-40%",
+            translateY: "40%",
         })
     }
 

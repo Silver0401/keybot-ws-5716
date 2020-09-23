@@ -178,6 +178,7 @@ $BackgroundColor: rgb(6, 3, 22);
     margin-top: 40px;
     height: 81vh;
     width: 470px;
+    // background: lightcoral;
     background: $BackgroundColor;
     position: relative;
     border-radius: 10px;
@@ -274,12 +275,12 @@ $BackgroundColor: rgb(6, 3, 22);
         width: 70%;
         height: 40%;
         align-self: center;
-        position: relative;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        // background-color: lightcoral;
 
         @mixin armAnatomy {
             position: absolute;
@@ -295,6 +296,7 @@ $BackgroundColor: rgb(6, 3, 22);
                 width: 50px;
                 height: 140px;
                 background: $BackgroundColor;
+                // background: blue;
                 bottom: 0%;
                 border-radius: 100px;
                 border: 2px solid white;
@@ -399,6 +401,7 @@ $BackgroundColor: rgb(6, 3, 22);
         #leftArm{
             @include armAnatomy();
             left: 0%;
+            bottom: 0%;
             transform-origin: left bottom;
             .ArmStructure{
                 left: 15px;
@@ -413,6 +416,7 @@ $BackgroundColor: rgb(6, 3, 22);
         #rightArm{
             @include armAnatomy();
             right: 0%;
+            bottom: 0%;
             transform-origin: right bottom;
             .ArmStructure{
                 right: 15px;
@@ -466,6 +470,7 @@ $BackgroundColor: rgb(6, 3, 22);
         .LoginFormBox, .SignUpFormBox{
 
             form{
+                
                 .CheckBox{
     
                     top: 220px;
