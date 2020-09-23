@@ -48,7 +48,7 @@ const MariBio = "Mi nombre es Mariana, y me gusta que me digan así. Tengo 17 a�
 const AleBio = "Me llamo Alessa, me gusta que me digan Ale y tengo 17 años. Soy la presidenta de la gestión 2020 - 2021 de Keybot. Considero que nuestro equipo, más que un equipo, es una familia. Un fun fact acerca de mi es que: adoro a los animales, a tal punto que he tenido desde perros y gatos, hasta conejos y patos. "
 const ItzelBio = "Soy Itzel Castellanos, tengo 17 años y soy líder de Chairman's, me gusta todo lo relacionado con las artes en especial la música y el dibujo, un fun fact sobre mi es que soy muy distraída con mis cosas, un día llegue a perder un solo zapato en el Schoolastico"
 const EugeBio = "Hola! Soy Eugenia De Jesus Rangel tengo 17 años. Soy la Líder del área de programación/electrónica y vicepresidenta del equipo para esta gestión de 2020 a 2021. Fun fact: Me gusta andar en motocicleta.";
-const NadiaBio = "Hola me llamo Nadia Belem, me gust que me digan nadia y detesto el nombre de belem. Tengo 17 años y soy la lider del área de mercadotecnia de la gestión 2020 - 2021. Un random fact mio: Me gusta viajar mucho y adoro los chihuahas."
+const NadiaBio = "Hola me llamo Nadia Belem, me gusta que me digan nadia y detesto el nombre de belem. Tengo 17 años y soy la lider del área de mercadotecnia de la gestión 2020 - 2021. Un random fact mio: Me gusta viajar mucho y adoro los chihuahas."
 // Bennet bio missing (temporal bio)
 const BennetBio = ""
 // Karla bio missing (temporal bio)
@@ -75,7 +75,7 @@ const CardsBox = () => {
           <img id={`${AnimID}Img`} alt="coso" src={Img}></img>
         </div>
         <h1>{Name}</h1>
-        <h4>Click to se Bio</h4>
+        <h4>Click to see Bio</h4>
         <div id={`${AnimID}Bio`} className="bio">
           <p>{Bio}</p>
         </div>
@@ -226,7 +226,7 @@ const CardsBox = () => {
   CreateCard("Abigail H.", AbiFoto, AbiBio, "Leaders", "card5"); // Ya esta bio
   CreateCard("Rodrigo V.", rodriFoto, RodriBio, "Leaders", "card6"); // ---
   CreateCard("Mariana M.", mariFoto, MariBio, "Leaders", "card8"); // Ya esta bio
-  CreateCard("Euegenia", EuegeFoto, EugeBio, "Leaders", "card17") 
+  CreateCard("Eugenia", EuegeFoto, EugeBio, "Leaders", "card17") 
   CreateCard("Itzel C.", ItzelFoto, ItzelBio, "Leaders", "card19") 
   CreateCard("Karla Y.", KarlaFoto, KarlaBio, "Leaders", "card22")
   CreateCard("Guillermo M.H.", MemeFoto, MemeBio, "Leaders", "card23")
