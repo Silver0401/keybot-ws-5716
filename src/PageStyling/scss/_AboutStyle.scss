@@ -78,6 +78,7 @@ $UnclickedButtonColor: rgb(96, 99, 96);
         position: relative;
         grid-area: FInfoBox;
         background: $BackgroundColor;
+        @include alignCenter();
 
         .wrapper{
             position: absolute;
@@ -85,9 +86,6 @@ $UnclickedButtonColor: rgb(96, 99, 96);
             background-color: $BackgroundColor;
             width: 90%;
             height: 90%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%);
             border-radius: 50px;
             box-shadow: 7px 7px 25px rgb(39, 87, 99) , -5px -5px 10px rgba(1, 11, 14, 0.733);
 
@@ -111,8 +109,8 @@ $UnclickedButtonColor: rgb(96, 99, 96);
                 .TitleThing{
                     background-color: white;
                     color: black;
-                    position: fixed;
-                    width: 90%;
+                    position: absolute;
+                    width: 100%;
                     text-align: center;
                     border-top-left-radius: 50px;
                     border-top-right-radius: 50px;
@@ -844,5 +842,10 @@ $UnclickedButtonColor: rgb(96, 99, 96);
             }
         }
     }
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
 
 }
