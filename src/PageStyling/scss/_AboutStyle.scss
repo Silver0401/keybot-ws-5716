@@ -495,7 +495,8 @@ $UnclickedButtonColor: rgb(96, 99, 96);
 
             h2{
                 position: absolute;
-                top: -5%;
+                top: -8%;
+                font-size: calc(1em + 1vw);
                 // background: white;
             }
 
@@ -547,11 +548,13 @@ $UnclickedButtonColor: rgb(96, 99, 96);
 
                 h1{
                     padding-top: 10px;
+                    font-size: calc(1em + 1vw);
                     height: 15%;
                 }
 
                 h4{
-                    padding-bottom: 20px;
+                    padding-bottom: 25px;
+                    color: lightskyblue;
                     font-size: calc(1em + .5vw);
                 }
 

@@ -16,6 +16,8 @@ import eguzFoto from "../../Resources/eguz.jpg";
 import mayaFoto from "../../Resources/maya.jpg";
 import SalmaFoto from "../../Resources/Salma.jpg";
 import siwaFoto from "../../Resources/siwa.jpg";
+import OsbaldoFoto from "../../Resources/Osbaldo.jpg";
+import MagalyFoto from "../../Resources/magaly.jpg";
 
 // Bios
 
@@ -26,7 +28,9 @@ const EguzBio = "He sido un mentor de programación para la \"First Robotics Com
 const PaliBio = "Paola Elinora Parga Saucedo mejor conocida como Paly Parga es directora del área de Liderazgo y Vivencia en el Tecnológico de Monterrey. Tiene una licenciatura en administración de empresas por el Tecnológico de Monterrey, además de contar con una maestría y doctorado en Imagen Publica por el Colegio de consultores en Imagen Pública. Ella cree que todo es perfectible y que todo lo que se propongan se puede realizar con pasión. ";
 const SiwaBio = "Silvana Torres Ferrera estudia el 8vo semestre de contabilidad y finanzas. Su historia en Keybot comenzó en el 2014 cuando junto con algunos amigos fundaron el equipo. Para la temporada 2015 fue líder del equipo y al graduarse de preparatoria continuo como mentor Jr. en el área de administración. \"Keybot me enseñó a soñar y a llegar al mundial de robótica, definitivamente me cambió la vida y es increíble ver cómo años después le sigue cambiando la vida a las nuevas generaciones\""
 const DavoBio = "Para mí Keybot significa más que un equipo de robótica, es una familia que día a día crece más, una familia que al llegar a ella nunca deja de sorprendente, te enseña no sólo sobre tu área sino de la vida en general, te da competencias y habilidades que en ningún otro lado vas a encontrar, las personas con las que te encuentras pasan a convertirse de completos desconocidos a tus hermanos. Las experiencias que te deja a lo largo del camino siempre te enseñan algo y te vuelven mejor alumno y persona. Agradezco infinitamente a Keybot por lo que me enseñó a lo largo de mi prepa y me llevo todas las experiencias y sobre todo una gran familia a la que uno siempre va a pertenecer. Keybot es un cachito de mí.";
-
+const MagalyBio = "Licenciada en Mercadotecnia Internacional con experiencia en organización de eventos, promoción y administración de nómina, así como en creación y desarrollo del departamento de promoción de un Colegio en la Ciudad de México. Actualmente apoyo en redes sociales y desarrollo de nuevos productos en una empresa dulcera de México y participando como mentora en el área de mercadotecnia de ¡Keybot!"
+const LuisBio = "Luis Enrique Sánchez, profesor del departamento de Ciencias de PrepaTec. Mi historia en Keybot comenzó en el 2019 cuando me invitan a participar como Head Coach. En esa temporada tuvimos la oportunidad de quedar como finalistas en el regional de Campus Santa Fe, lo que nos dio el pase al Campeonato Mundial en Houston. \"Keybot me ha enseñado el gran potencial que tienen nuestros alumnos cuando persiguen sus sueños con pasión y disciplina\". "
+const OsbaldoBio = "Osbaldo Becerra, profesor del Tecnológico de Monterrey con una Maestría en ciencias en electrónica, diseño de circuitos integrados. Posgrado en el instituto nacional de astrofísica, óptica y electrónica (INAOE), en Tonantzinta, Puebla. Experiencia en diferentes áreas y empresas como electro fotónica y diseño electrónico en Axón, líder de ingeniería para creación del canal 26 del gobierno del estado de Puebla, en la transmisión de señal de tv en Once TV y catedrático en la Universidad politécnica de Pachuca. Actualmente apoya como mentor de electrónica al equipo de Keybot!"
 
 const CardsBox = () => {
 
@@ -188,19 +192,21 @@ const CardsBox = () => {
 	CreateCard("Ismael M.C.", IsmaFoto, IsmaBio, "Mentors", "card1") 
 	CreateCard("Emiliano L.C", EmiFoto, EmiBio, "Mentors", "card2") 
 	CreateCard("Guillermo", MemoFoto, MemoBio, "Mentors", "card3") 
-	CreateCard("Davo E.", davoFoto, "esta es mi bio", "Mentors", "card7")
-	CreateCard("Salma", SalmaFoto, "esta es mi bio", "Mentors", "card9")
-	CreateCard("Silvana T.", siwaFoto, "esta es mi bio", "Mentors", "card10")
+	CreateCard("Davo E.", davoFoto, DavoBio, "Mentors", "card7")
+	CreateCard("Salma", SalmaFoto, "missing bio", "Mentors", "card9")
+	CreateCard("Silvana T.", siwaFoto, SiwaBio, "Mentors", "card10")
 
-	CreateCard("Sofia", SofiFoto, "esta es mi bio", "Leaders", "card4")
-	CreateCard("Abigail H.", AbiFoto, "esta es mi bio", "Leaders", "card5")
-	CreateCard("Rodrigo", rodriFoto, "esta es mi bio", "Leaders", "card6")
-	CreateCard("Mariana", mariFoto, "esta es mi bio", "Leaders", "card8")
+	CreateCard("Sofia", SofiFoto, "missing bio", "Leaders", "card4")
+	CreateCard("Abigail H.", AbiFoto, "missing bio", "Leaders", "card5")
+	CreateCard("Rodrigo", rodriFoto, "missing bio", "Leaders", "card6")
+	CreateCard("Mariana", mariFoto, "missing bio", "Leaders", "card8")
 
-	CreateCard("Paola P.E.", PaliFoto, "esta es mi bio", "Coaches", "card12")
+	CreateCard("Magaly", MagalyFoto, MagalyBio, "Coaches", "card16")
+	CreateCard("Paola P.E.", PaliFoto, PaliBio, "Coaches", "card12")
 	CreateCard("Eguzki A.M.", eguzFoto, EguzBio, "Coaches", "card13")
-	CreateCard("Luis S.G.", QuiquinFoto, "esta es mi bio", "Coaches", "card11")
-	CreateCard("Carlos M.D.", mayaFoto, "esta es mi bio", "Coaches", "card14")
+	CreateCard("Luis S.G.", QuiquinFoto, LuisBio, "Coaches", "card11")
+	CreateCard("Carlos M.D.", mayaFoto, "missing bio", "Coaches", "card14")
+	CreateCard("Osbaldo B.", OsbaldoFoto, OsbaldoBio, "Coaches", "card15")
 
 	return (
 	  <div className="CardsBox">
