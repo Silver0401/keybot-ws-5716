@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import Tec from "../../Resources/tecx.png"
+// import Tec from "../../Resources/tecx.png"
 import Azteca from "../../Resources/azteca2.png"
 // import { use } from "../../../BackEnd/BackendData/routes/users";
 
@@ -58,7 +58,7 @@ const HomeLeftBox = () => {
                 <h1>Sponsors</h1>
                 <div className="Logos">
                     <img id="img1" alt="Logo" src={Azteca} style={logoState ? { opacity: 0 } : { opacity: 1 }} ></img>
-                    <img id="img2" alt="Logo2" src={Tec} style={logoState ? { opacity: 1 } : { opacity: 0 }} ></img>
+                    <img id="img2" alt="Logo2" src={Azteca} style={logoState ? { opacity: 1 } : { opacity: 0 }} ></img>
                 </div>
             </div>
         </div>
