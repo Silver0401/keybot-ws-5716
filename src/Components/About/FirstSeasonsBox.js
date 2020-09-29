@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 import { useSpring, animated} from 'react-spring';
-
+import {useTranslation} from "react-i18next";
 
 const FirstSeasonBox = (props) => {
+
+    const {t} = useTranslation()
 
     const [RRButtonPressed, setRRButton] = useState(false)
     const [SHButtonPressed, setSHButton] = useState(false)
@@ -404,7 +406,7 @@ const FirstSeasonBox = (props) => {
 
         <div className="FirstSeasonsBox">
 
-            <h1 className="title">Seasons Buttons</h1> <p></p>
+            <h1 className="title">{t("About.seasonsTitle")}</h1> <p></p>
 
             <div className="ButtonBox">
 

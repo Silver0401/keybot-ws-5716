@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
+import { I18nextProvider } from "react-i18next";
+import "./Languages/main";
+import i18n from './Languages/main';
 
 ReactDOM.render(
   <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <I18nextProvider i18n={i18n}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </I18nextProvider>
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

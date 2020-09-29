@@ -60,12 +60,12 @@ const LoginPage = () => {
 
       anime({
         targets: "#rightArm",
-        duration: 4000,
+        duration: 2000,
         rotateZ: -250
       })
       anime({
         targets: "#leftArm",
-        duration: 4000,
+        duration: 2000,
         rotateZ: 250
       })
       anime({

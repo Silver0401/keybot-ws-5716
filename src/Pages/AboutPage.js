@@ -21,17 +21,6 @@ const AboutPage = () => {
         console.log(value)
     }
 
-    // window.onscroll = () => {
-
-    //     let pageHeight = YScroll.current.scrollHeight
-
-    //     // console.log(window.pageYOffset)
-    //     console.log(((pageHeight) / window.pageYOffset) * 1)
-    //     // console.log(pageHeight/window.pageYOffset)
-    // }
-    
-
-
     return (
         <div ref={YScroll} className="AboutPage">
 

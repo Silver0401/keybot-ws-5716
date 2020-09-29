@@ -1,4 +1,5 @@
 import React from "react";
+import {useTranslation} from "react-i18next";
 
 // Images
 import GrpImg1 from "../../Resources/15.jpg";
@@ -12,11 +13,14 @@ import GrpImg8 from "../../Resources/stw2.jpg";
 
 
 const Gallery = () => {
+
+    const {t} = useTranslation()
+
     return(
         <div className="Gallery">
 
             <div className="GalleryTitle">
-                <h1>Keybot Gallery</h1>
+                <h1>{t("About.GalleryTitle")}</h1>
             </div>
             
             <div className="TopRow">

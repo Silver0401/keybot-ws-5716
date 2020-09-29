@@ -1,0 +1,46 @@
+{
+  "NavBar.Home": "Home",
+  "NavBar.Contact": "Contact Us",
+  "NavBar.About": "About Us",
+  "NavBar.Login": "Login",
+
+  "Home.Areas": "Areas",
+  "Home.Sponsors": "Sponsors",
+  "Home.Game": "Keybot Game Coming Soon...",
+  "Home.Clock": "Time Left for FRC",
+  "Home.days": "Days",
+  "Home.hours": "Hours",
+  "Home.minutes": "Minutes",
+  "Home.membersSup": "Team Members",
+  "Home.membersInf": "and counting...",
+
+  "Contact.Title": "Send us your Info!",
+  "Contact.name": "Name",
+  "Contact.email": "Email",
+  "Contact.number": "Phone",
+  "Contact.subject": "Subject",
+  "Contact.message": "Message",
+  "Contact.button": "Send",
+
+  "About.seasonsTitle": "Seasons Buttons",
+  "About.historyTitle": "A Brief History of the Team",
+  "About.history": "Keybot is a robotics team that proudly represents Mexico internationally in the First Robotics Competition, but beyond that, Keybot is a family and community that expands and develops day by day. The name of our team, means \"the key to knowledge towards science, technology and engineering\"; Originally designed with the values instilled by our institution and of course the FIRST competition. We have been a part of the FRC community since 2015, which is why our presence has been acknowledged for 6 straight seasons, where we have fiercely competed, representing everything our mentors have taught us throughout the years.",
+
+  "About.CardsCoaches": "Coaches",
+  "About.CardsMentors": "Mentors",
+  "About.CardsLeaders": "Leaders",
+  "About.CardsClick": "Click to see Bio.",
+
+  "About.MisionTitle": "Our Mision",
+  "About.MisionInfo": "To inspire young minds to innovate within the field of techonology, science and business, awakening their creativity and potential, using robotics as the main tool.",
+
+  "About.VisionTitle": "Our Vision",
+  "About.VisionInfo": "To become one of the best internationally recognized FRC Teams, by our leadership inside the distinct areas that make up our community, as well as by our capabilites of innovation and creativeness in the industrial and technological sector.",
+
+  "About.GalleryTitle": "Keybot Gallery",
+  "About.Footer": "All Rights Reserved",
+
+  "Login.Username": "Username or Email",
+  "Login.Password": "Password",
+  "Login.PassBox": "Show Pass"
+}

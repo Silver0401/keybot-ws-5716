@@ -2,6 +2,9 @@
 
     .GlobalNavBar{
         height: 80px;
+        .Logo{
+            font-size: 17px;
+        }
     }
 
     .HomePage{
@@ -103,11 +106,13 @@
                 justify-content: space-around;
                 .Card{
                     height: 45%;
+                    width: 260px;
                 }
             }
             .SmallCardsBox{
                 .Card{
                     height: 90%;
+                    width: 260px;
                 }
                 // margin: 100px 0px;
             }
@@ -200,10 +205,11 @@
 
                 .CheckBox{
                     top: 30%;
+                    font-size: 8px;
                 }
                 .CheckBox2{
-                    top: -3%;
-                    z-index: 1;
+                    top: 70px;
+                    // z-index: 1;
                 }
             }
         }

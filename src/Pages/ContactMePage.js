@@ -1,8 +1,11 @@
 import React, { useRef } from "react";
 import TSParticles from "react-tsparticles";
 import axios from "axios";
+import {useTranslation} from "react-i18next";
 
 const ContactMePage = () => {
+
+    const {t} = useTranslation()
 
     const NameBox = useRef("none")
     const MailBox = useRef("none")
@@ -46,7 +49,6 @@ const ContactMePage = () => {
     return (
       <div className="ContactMePage">
         <div className="SocialMediaBox">
-          
           <TSParticles
             id="tsparticles"
             options={{
@@ -193,12 +195,12 @@ const ContactMePage = () => {
         </div>
 
         <div className="MailFormsBox">
-          <h1>Send Us your Info!</h1>
+          <h1>{t("Contact.Title")}</h1>
 
           <form>
             <div className="nameBox">
               <input
-                placeholder="Your Name"
+                placeholder={t("Contact.name")}
                 type="text"
                 name="something"
                 ref={NameBox}
@@ -206,7 +208,7 @@ const ContactMePage = () => {
             </div>
             <div className="mailBox">
               <input
-                placeholder="Your Mail"
+                placeholder={t("Contact.email")}
                 type="email"
                 name="something"
                 ref={MailBox}
@@ -214,7 +216,7 @@ const ContactMePage = () => {
             </div>
             <div className="phoneBox">
               <input
-                placeholder="Your Phone Number"
+                placeholder={t("Contact.number")}
                 type="text"
                 name="something"
                 ref={PhoneBox}
@@ -222,17 +224,26 @@ const ContactMePage = () => {
             </div>
             <div className="subjectBox">
               <input
-                placeholder="The Subject"
+                placeholder={t("Contact.subject")}
                 type="text"
                 name="something"
                 ref={SubjectBox}
               ></input>
             </div>
             <div className="messageBox">
-              <input ref={MessageBox} placeholder="Message" type="text" name="something"></input>
+              <input
+                ref={MessageBox}
+                placeholder={t("Contact.message")}
+                type="text"
+                name="something"
+              ></input>
             </div>
             <div className="submitBox">
-              <input onClick={HandleSubmitForm} type="submit" name="something"></input>
+              <input
+                onClick={HandleSubmitForm}
+                type="submit"
+                name="something"
+              ></input>
             </div>
           </form>
         </div>

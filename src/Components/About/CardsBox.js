@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import anime from "animejs";
+import {useTranslation} from "react-i18next";
 
 // Photos
 import IsmaFoto from "../../Resources/isma.jpeg";
@@ -55,6 +56,9 @@ const MemeBio = "Estudiante del tecnológico de Monterrey campus Hidalgo,ex-Colu
 const PaolaBio = "Me llamo Paola Salomón, pero me gusta que me digan Pao. Tengo 17 años. Soy líder de acción social de la gestión de keybot 2020-2021. Me gusta mucho jugar Tenis.";
 
 const CardsBox = () => {
+
+  const {t} = useTranslation()
+
   const [MentorsCounter, changeMentorsCounter] = useState(0);
   const [CoachesCounter, changeCoachesCounter] = useState(0);
   const [LeadersCounter, changeLeadersCounter] = useState(0);
@@ -72,7 +76,7 @@ const CardsBox = () => {
           <img id={`${AnimID}Img`} alt="coso" src={Img}></img>
         </div>
         <h1>{Name}</h1>
-        <h4>Click to see Bio</h4>
+        <h4>{t("About.CardsClick")}</h4>
         <div id={`${AnimID}Bio`} className="bio">
           <p>{Bio}</p>
         </div>
@@ -242,7 +246,7 @@ const CardsBox = () => {
     <div className="CardsBox">
       <div className="LargeCardsBox">
         <div className="Card">
-          <h2>Mentors</h2>
+          <h2>{t("About.CardsMentors")}</h2>
 
           {DisplayCardsList("Mentors")}
 
@@ -263,7 +267,7 @@ const CardsBox = () => {
         </div>
 
         <div className="Card">
-          <h2>Leaders</h2>
+          <h2>{t("About.CardsLeaders")}</h2>
 
           {DisplayCardsList("Leaders")}
 
@@ -287,7 +291,7 @@ const CardsBox = () => {
 
       <div className="SmallCardsBox">
         <div className="Card">
-          <h2>Coaches</h2>
+          <h2>{t("About.CardsCoaches")}</h2>
 
           {DisplayCardsList("Coaches")}
 

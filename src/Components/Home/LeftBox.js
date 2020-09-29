@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from "react";
-// import Tec from "../../Resources/tecx.png"
 import Azteca from "../../Resources/azteca2.png"
-// import { use } from "../../../BackEnd/BackendData/routes/users";
+import { useTranslation } from "react-i18next";
+// import Tec from "../../Resources/tecx.png"
 
 const HomeLeftBox = () => {
+
+    const { t } = useTranslation();
 
     let counter = 0
     let [logoState, setLogoState] = useState(false)
@@ -45,7 +47,7 @@ const HomeLeftBox = () => {
                             <div className="green"></div>
 
                             <div className="PercentageCircle">
-                                <h1>Areas</h1>
+                                <h1>{t("Home.Areas")}</h1>
                             </div>
 
                         </div>
@@ -55,7 +57,7 @@ const HomeLeftBox = () => {
             </div>
 
             <div className="BoxPat">
-                <h1>Sponsors</h1>
+                <h1>{t("Home.Sponsors")}</h1>
                 <div className="Logos">
                     <img id="img1" alt="Logo" src={Azteca} style={logoState ? { opacity: 0 } : { opacity: 1 }} ></img>
                     <img id="img2" alt="Logo2" src={Azteca} style={logoState ? { opacity: 1 } : { opacity: 0 }} ></img>

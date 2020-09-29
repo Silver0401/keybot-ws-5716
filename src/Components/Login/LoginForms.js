@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import anime from "animejs";
+import {useTranslation} from "react-i18next";
 // import bcrypt from "bcrypt";
 
 
-
 const Forms = (props) => {
+
+    const {t} = useTranslation()
 
     const UserData = useRef("null")
     const PassBox = useRef("null")
@@ -19,17 +21,17 @@ const Forms = (props) => {
         anime({
             targets: [".LeftEye, .RightEye"],
             duration: 1000,
-            height: "65%"
+            height: "60%"
         })
 
         anime({
             targets: "#rightArm",
-            duration: 4000,
+            duration: 2000,
             rotateZ: -250
         })
         anime({
             targets: "#leftArm",
-            duration: 4000,
+            duration: 2000,
             rotateZ: 250
         })
         anime({
@@ -53,6 +55,7 @@ const Forms = (props) => {
             translateY: 0,
             rotateZ: 0
         })
+
         anime({
             targets: "#leftArm",
             duration: 2000,
@@ -185,7 +188,9 @@ const Forms = (props) => {
 
             if (PassBox.current.value.length >= 1 && PassBox.current.type === "password"){
                 PuchiBlind()
-            } 
+            } else {
+                PuchiPeek()
+            }
         }
 
     })
@@ -271,17 +276,17 @@ const Forms = (props) => {
         <div className="LoginFormBox" >
             <form>
                 <div className="CheckBox">
-                    <label>Show Pass</label>
+                    <label>{t("Login.PassBox")}</label>
                     <input onClick={() => DisplayPassForm(PassBox)} type="checkbox"></input>
                 </div>
                 <div className="Row">
                     {/* <label for="LoginUsername"><b></b></label> */}
-                    <input className="userI" placeholder="Username or E-mail" ref={UserData} type="text" id="LoginUsername" ></input>
+                    <input className="userI" placeholder={t("Login.Username")} ref={UserData} type="text" id="LoginUsername" ></input>
                     <div className="ColorBox1"></div>
                 </div>
                 <div className="Row">
                     {/* <label for="LoginPassword"><b></b></label> */}
-                    <input className="passI" placeholder="Password" ref={PassBox} type="password" id="LoginPassword"></input>
+                    <input className="passI" placeholder={t("Login.Password")} ref={PassBox} type="password" id="LoginPassword"></input>
                     <div className="ColorBox2"></div>
                 </div>
                 <div className="Row">
@@ -295,7 +300,7 @@ const Forms = (props) => {
         <div className="SignUpFormBox" >
             <form>
                 <div className="CheckBox2">
-                    <label>Show Pass</label>
+                    <label>{t("Login.PassBox")}</label>
                     <input onClick={() => DisplayPassForm(PassBox)} type="checkbox"></input>
                 </div>
                 <div className="Row">
@@ -310,7 +315,7 @@ const Forms = (props) => {
                 </div>
                 <div className="Row">
                     <label htmlFor="SingUpPassword"><b></b></label>
-                    <input placeholder="Password" ref={PassBox} className="passI" type="password" id="SingUpPassword"></input>
+                    <input placeholder={t("Login.Password")} ref={PassBox} className="passI" type="password" id="SingUpPassword"></input>
                     <div className="ColorBox2"></div>
                 </div>
                 <div className="Row">

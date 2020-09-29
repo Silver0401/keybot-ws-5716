@@ -1,0 +1,47 @@
+{
+    "NavBar.Home":"Casa",
+    "NavBar.Contact":"Únete",
+    "NavBar.About":"Acerca de",
+    "NavBar.Login":"Login",
+
+    "Home.Areas": "Áreas",
+    "Home.Sponsors": "Patrocinadores",
+    "Home.Game": "Juego de Keybot Proximamente...",
+    "Home.Clock": "Tiempo para FRC",
+    "Home.days": "Días",
+    "Home.hours": "Horas",
+    "Home.minutes": "Minutos",
+    "Home.membersSup": "Miembros",
+    "Home.membersInf": "y contando...",
+
+    "Contact.Title": "¡Envianos tu Info!",
+    "Contact.name": "Nombre",
+    "Contact.email": "Email",
+    "Contact.number": "Telefono",
+    "Contact.subject": "Asunto",
+    "Contact.message": "Mensaje",
+    "Contact.button": "Enviar",
+
+    "About.seasonsTitle":"Botones de Temporadas",
+    "About.historyTitle":"Una Breve Historia del Equipo",
+    "About.history":"Keybot es un equipo de robotica que orgullosamente representa internacionalmente a México en la \"First Robotics Competition\", pero más allá, Keybot es una familia y comunidad que se expande y se desarrolla día a día. El nombre de nuestro equipo significa \"La llave al conocimiento hacia la ciencia, tecnología e ingienería\"; Originalmente diseñado con los valores inyectados por nuestra institución y por supuesto por la misma competencia de FIRST. Hemos sido parte de la comunidad de FRC desde 2015, por lo cual, nuestra presencia ha sido reconocida por 6 temporadas seguidas, donde hemos competido ferozmente, representando todo lo que nuestros mentores nos han enseñado a través de los años.",
+    
+    "About.CardsCoaches":"Coaches",
+    "About.CardsMentors":"Mentores",
+    "About.CardsLeaders":"Líderes",
+    "About.CardsClick":"Click para ver Bio.",
+
+    "About.MisionTitle":"Nuestra Misión",
+    "About.MisionInfo":"El inspirar a mentes jovenes para inovar dentro del campo de la tecnología, la ciencia y los negocios, despertando su creatividad y potencial mediante el uso de la robotica como herramienta principal.",
+
+    "About.VisionTitle":"Nuestra Visión",
+    "About.VisionInfo":"El convertirnos en uno de los mejores y más reconocidos equipos de FRC a nivel internacional, por nuestro liderazgo dentro de las diferentes áreas de nuestra comunidad, así como por nuestra capacidades de inovación y creatividad en los sectores industriales y tecnológicos",
+
+    "About.GalleryTitle":"Galería de Keybot",
+    "About.Footer":"Todos los derechos Reservados",
+
+    "Login.Username": "Username o Email",
+    "Login.Password": "Contraseña",
+    "Login.PassBox": "Mostrar Contra"
+
+}
