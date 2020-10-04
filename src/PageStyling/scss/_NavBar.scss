@@ -15,7 +15,7 @@ $KeyBotColor: #00CDFF;
 }
 
 @mixin OpenNav {
-    transition: height 600ms, width 600ms, transform 500ms, opacity 500ms, border 1s, background-color 1s;
+    transition: height 600ms, width 600ms, transform 0ms, opacity 500ms, border 200ms, background-color 1s;
 }
 
 @mixin CloseNav {
