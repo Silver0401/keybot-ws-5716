@@ -306,11 +306,13 @@ $KeyBotColor: #00CDFF;
             .line3{
                 transform: rotate(220deg);
                 background-color: white;
+                transition: transform 500ms, background-color 500ms;
             }
     
             .line4{
                 transform: rotate(-220deg);
                 background-color: white;
+                transition: transform 500ms, background-color 500ms;
             }
     
         }
