@@ -1,0 +1,111 @@
+@media (min-width: 2000px){
+
+    .GlobalNavBar{
+        margin-top: 20px;
+        height: 160px;
+
+        .Logo{
+            font-size: 60px;
+        }
+
+        .LangNavBox{
+            // background-color: black;
+            width: 200px;
+
+            .LangBox{
+                width: 100px;
+                height: 100px;
+                border: 7px solid black;
+            }
+        }
+    }
+
+    .HomePage{
+        // height: 100vh;
+        grid-template-columns: 1fr 1200px 1fr;
+
+        .LeftBox{
+            // background-color: lightblue;
+            .CircleContainer{
+                width: 600px;
+                height: 600px;
+
+                .CircleStats{
+                    .PercentageContainer{
+                        .HoverBoxes{
+                            .PercentageCircle{
+                                border-bottom: 80px solid $KeyBotColor;
+                                border-left:80px solid rgb(38, 225, 97);
+                                border-top: 80px solid rgb(250, 238, 68);
+                                border-right: 80px solid rgb(226, 39, 39);
+
+                                h1{
+                                    font-size: 50px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .BoxPat{
+                height: 35%;
+            }
+        }
+
+        .ImgBox{
+            .EyesBox{
+                .LeftEyeOpened{
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .Iris{
+                    border: 10px solid black;
+                }
+
+                .Mouth{
+                    height: 40px;
+                    margin-bottom: 20px;
+                }
+            }
+            .RobotLight{
+                top: 420px;
+            }
+        }
+
+        .RightBox{
+            .GroupMembers{
+                .PeopleBox{
+                    h4{
+                        font-size: 30px;
+                    }
+                    h3{
+                        font-size: 40px;
+                    }
+                    h5{
+                        font-size: 25px;
+                    }
+                }
+            }
+            .MainSpace{
+                h1{
+                    font-size: 50px;
+                }
+            }
+            .TimerBox{
+                h2{
+                    font-size: 40px;
+                }
+                .Time{
+                    h1{
+                        font-size: 35px;
+                    }
+                    p{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+    }
+}

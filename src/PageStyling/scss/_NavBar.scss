@@ -42,7 +42,7 @@ $KeyBotColor: #00CDFF;
 }
 
 .GlobalNavBar {
-    z-index: 5;
+    z-index: 1;
     position: fixed;
     width: 98%;
     height: 90px;
@@ -353,12 +353,6 @@ $KeyBotColor: #00CDFF;
     }  
 }
 
-@media (min-width: 1900px){
-
-    .GlobalNavBar{
-        height: 120px;
-    }
-}
 
 
 

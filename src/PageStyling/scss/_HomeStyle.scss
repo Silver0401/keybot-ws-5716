@@ -17,7 +17,6 @@ $DarkTheme: rgb(6, 3, 22);
     justify-content: center;
     align-items: center;
 }
-
 @mixin ChangeTheme ($ThemeColorDark){
     
     @if $ThemeColorDark {
@@ -26,7 +25,6 @@ $DarkTheme: rgb(6, 3, 22);
         background-color: $LightTheme;
     }
 }
-
 @mixin BlinkAnimation {
     transition: height 500ms, border-radius 500ms;
 }
@@ -36,7 +34,6 @@ $DarkTheme: rgb(6, 3, 22);
         transform: rotate(360deg);
     }
 }   
-
 @keyframes swapLogo{
     0%{
         transform: rotateY(0deg);
@@ -46,20 +43,43 @@ $DarkTheme: rgb(6, 3, 22);
     }
 }
 
+
+@keyframes ZrotateNegative{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-359deg);
+    }
+}
+@keyframes Zrotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(359deg);
+    }
+}
+
+
 .HomePage{
     
     position: absolute;
     // top: 13%;
     width: 100%;
     display: grid;
-    height: 83vh;
-    margin-top: 120px;
+    height: 90vh;
+    margin-top: 10vh;
     grid-template-columns: 1fr 650px 1fr;
     grid-template-areas: 
     "LeftBox ImgBox RightBox";
 
     div{
         position: relative;
+    }
+
+    .ImgBox, .LeftBox, .RightBox{
+        z-index: 0;
     }
 
     .ImgBox{
@@ -72,7 +92,7 @@ $DarkTheme: rgb(6, 3, 22);
             border-radius: 50%;
             position: absolute;            
             left: 50.5%;
-            top: 17%;
+            top: 24.5%;
 
             transform: translate(-50%,-50%);
 
@@ -118,8 +138,8 @@ $DarkTheme: rgb(6, 3, 22);
             align-items: center;
 
             .LeftEyeOpened {
-                width: 20%;
-                height: 65%;
+                width: 50px;
+                height: 50px;
                 background-color: white;
                 position: relative;
                 overflow: hidden;
@@ -201,7 +221,7 @@ $DarkTheme: rgb(6, 3, 22);
     }
 
     .LeftBox{
-        @include ChangeTheme($ThemeColorDark: true);
+        // @include ChangeTheme($ThemeColorDark: true);
         grid-area: LeftBox;
         position: relative;
         display: flex;
@@ -214,6 +234,7 @@ $DarkTheme: rgb(6, 3, 22);
             width: 300px;
             height: 300px;
             align-self: center;
+            // background-color: white;
 
             @include alignCenter();
 
@@ -236,6 +257,7 @@ $DarkTheme: rgb(6, 3, 22);
                     height: 65%;
                     border: 0px solid transparent;
                     box-shadow: 0px 0px 35px $KeyBotColor;
+                    // background-color: white;
 
                     .HoverBoxes{
                         @include alignCenter();
@@ -517,6 +539,109 @@ $DarkTheme: rgb(6, 3, 22);
             }
         }
     }
+
+
+    .Loader{
+
+        @include alignCenter();
+        flex-direction: column;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $BackgroundColor;
+        z-index: 2;
+        overflow: hidden;
+
+        .AnimBox{
+            @include alignCenter();
+            position: relative;
+            width: 300px;
+            height: 300px;
+
+
+            .ElectronChars{
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background-color: white;
+                box-shadow: 0px 0px 20px white;
+                border-radius: 50%;
+                top: 10px;
+                right: 8px;
+            }
+
+            div{
+                position: absolute;
+                // background-color: white;
+                border-radius: 50%;
+                border: 2px solid $KeyBotColor;
+            }
+            
+            .Box1{
+                width: 15%;
+                height: 15%;
+                // border: 2px solid white;
+                background-color: $KeyBotColor;
+                box-shadow: 0px 0px 10px white;
+
+            }
+
+            .Box2{
+                width: 50%;
+                height: 50%;
+                animation: Zrotate 1.5s linear infinite;
+                
+            }
+
+            .Box3{
+                width: 70%;
+                height: 70%;
+                animation: ZrotateNegative 2.5s linear infinite;
+                
+            }
+            
+            .Box4{
+                width: 90%;
+                height: 90%;
+                animation: Zrotate 2.5s linear infinite;
+                
+            }
+
+            .Box2::before, .Box3::before, .Box4::before{
+                @extend .ElectronChars;
+            }
+
+            .Box2::before{
+                top: 30px;
+                right: 5px;
+            }
+
+            .Box3::before{
+                top: 35px;
+                right: 15px;
+            }
+
+            .Box4::before{
+                top: 55px;
+                right: 15px;
+            }
+
+        }
+
+        .MovingBox{
+            position: absolute;
+            top: 5%;
+            left: 0%;
+            width: 100%;
+            height: 90%;
+            background-color: $KeyBotColor;
+            transform: translateY(120%);
+        }
+    }
 }
 
 
@@ -629,8 +754,8 @@ $DarkTheme: rgb(6, 3, 22);
 
             .EyesBox{
                 .LeftEyeOpened{
-                    width: 30px;
-                    height: 30px;
+                    width: 40px;
+                    height: 40px;
                 }
 
                 .Mouth{
