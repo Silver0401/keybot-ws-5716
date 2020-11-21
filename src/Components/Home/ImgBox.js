@@ -20,6 +20,8 @@ const HomeImgBox = () => {
 
     useEffect(() => {
 
+        let isActive = true
+
         document.onmousemove = (event) => {
             var x = event.clientX * 100 / window.innerWidth + "%";
             var y = event.clientY * 100 / window.innerHeight + "%";
@@ -29,9 +31,14 @@ const HomeImgBox = () => {
                 top: y,
                 transform: `translate(${-x}, ${-y})`,
             }
-    
-            SetEyeCoordinates(EyeFollower)
+
+            if (isActive){
+                SetEyeCoordinates(EyeFollower)
+            }
         }
+
+        return (() => isActive = false)
+
     })
 
 

@@ -27,22 +27,53 @@ $KeyBotColor: #00CDFF;
     width:50px;
     height: 50px;
     cursor: pointer;
+    // background-color: red;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-around;
 
     div {
+        
         width: 100%;
         height: 8px;
         position: relative;
         background-color: rgb(6, 3, 22);
         border-radius: 50px;
+        transition: width 500ms, transform 700ms, background-color 1s;
+    }
+
+    .line3{
+        transition-delay: 500ms;
+    }
+}
+
+@mixin XBurger{
+    .line2{
+        transform: translateY(18px) rotate(225deg);
+        transition: transform 450ms, background-color 1s;
+        transition-delay: 200ms;
+        background-color: white;
+    }
+
+    .line3{
+        // transform: translateX(5px);
+        width: 0px;
+        transition: width 100ms, background-color 1s;
+        background-color: white;
+    }
+
+    .line4{
+        transform: translateY(-15px) rotate(-225deg);
+        transition: transform 450ms, background-color 1s;
+        transition-delay: 200ms;
+        background-color: white;
     }
 }
 
 .GlobalNavBar {
-    z-index: 1;
+    z-index: 4;
     position: fixed;
     width: 98%;
     height: 90px;
@@ -94,6 +125,7 @@ $KeyBotColor: #00CDFF;
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
 
             img{
                 width: 100%;
@@ -106,82 +138,53 @@ $KeyBotColor: #00CDFF;
         .burguerNotClicked{
     
             @include GeneralBurguerConfig();
-    
-            div{
-                @include CloseNav();
-            }
-    
+
             .line1{
-                .NavLinks{
-                    display: none;
-                }
-            }
-    
-            .line4{
+                @include CloseNav();
+                width: 0;
+                height: 0;
                 position: absolute;
                 opacity: 0;
-            }
-    
-        }
-    
-        .burguerClicked {
-    
-            @include GeneralBurguerConfig();
-    
-            div{
-                position: absolute;
-                @include OpenNav();
-            }
-    
-            li{
-                cursor: pointer;
-            }
-    
-            li, img{
-                cursor: pointer;
-            }
-            li, p{
-                cursor: pointer;
-            }
-    
-            .line1{
-                width: 400px;
-                height: 400px;
                 background: rgb(8, 2, 41);
                 border: 4px solid white;
-                display: block;
-    
                 border-radius: 50%;
-    
-                border-top: 4px solid transparent;
-                border-left: 1px solid white;
-                border-right: 1px solid white;
+                border-top: 2px solid white;
+                border-left: 4px solid white;
+                border-right: 2px solid white;
+                border-bottom: 4px solid white;
     
                 box-shadow: 0px 0px 5px $NavBarColor;
-    
-                transform: translate(-50%,8%) rotate(45deg);
+
+                transition: transform 500ms, width 500ms, height 500ms, opacity 500ms;
     
                 .NavLinks{
                     width: 100%;
                     height: 100%;
-                    opacity: 1;
                     text-align: center;
-                    // position: relative;
-                    // background-color: lightblue;
+                    top: 0;
+                    left: 0;
                     position: absolute;
+                    background-color: $NavBarBordercolor;
+                    border-radius: 50%;
+                    visibility: hidden;
+                    transition: visibility 1s;
+
+                    li, img, p{
+                        cursor: pointer;
+                    }
     
                     li{
+                        @include alignCenter();
                         position: absolute;
                         list-style: none;
                         font-size: 30px;
                         text-align: center;
-
-                        transform: rotate(-45deg); 
+                        // background-color: red;
                         
                         p{
                             @include alignCenter();
-                            top: 0%;
-                            position: absolute;
+                            position: relative;
+                            // background-color: red;
                             color: white;
                             opacity: 0;
                             width: 100%;
@@ -189,131 +192,109 @@ $KeyBotColor: #00CDFF;
                             font-size: 1.5rem;
                             text-align: center;
 
-                            justify-self: center;
                             transition: opacity 500ms;
                         }
 
                         img{
-                            // position: absolute;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
                             width: 100%;
                             height: 100%;
                             transition: transform 1s, opacity 1s;
                         }
                     }
     
-                    .link1{
+                    .link1, .link2, .link3, .link4{
+
                         width: 15%;
                         height: 15%;
-                        bottom: 25%;
-                        left: 10%;
-    
-                        &:hover p{
-                            opacity: 1;
-                            transition: opacity 1000ms;
-                        }
-    
-                        &:hover img{
-                            opacity: 0;
-                            transform: rotate(315deg);
-                            transition: transform 500ms, opacity 500ms;
-                        }
+                        opacity: 0;
+                        transition: opacity 500ms;
                         
                         img{
                             width: 100%;
                             height: 100%;
-
                             transition: transform 1s, opacity 1s;
                         }
-
+    
                         p{
                             top: 30%;
                             left: -10%;
                             transition: opacity 500ms;
                         }
+
+                        &:hover p{
+                            opacity: 1;
+                            transition: opacity 1000ms;
+                        }
     
+                        &:hover img{
+                            opacity: 0;
+                            transform: rotate(315deg);
+                            transition: transform 500ms, opacity 500ms;
+                        }
+                        
                     }
-    
+
+                    .link1{
+                        top: 25%;
+                        left: 10%;
+                    }
+
                     .link2{
-                        width: 15%;
-                        height: 15%;
-                        bottom: 12%;
-                        left: 30%;
-    
-                        &:hover img{
-                            opacity: 0;
-                            transform: rotate(315deg);
-                            transition: transform 500ms, opacity 500ms;
-                        }
-    
-                        &:hover p{
-                            opacity: 1;
-                            transition: opacity 1000ms;
-                        }
-                    }
-    
+                        top: 50%;
+                        left: 12%;
+                    }   
+
                     .link3{
-                        width: 15%;
-                        height: 15%;
-    
                         bottom: 10%;
-                        left: 55%;
-    
-                        &:hover img{
-                            opacity: 0;
-                            transform: rotate(315deg);
-                            transition: transform 500ms, opacity 500ms;
-                        }
-    
-                        &:hover p{
-                            opacity: 1;
-                            transition: opacity 1000ms;
-                        }
-    
-                    }
-    
+                        left: 30%;
+                    }   
+
                     .link4{
-                        width: 15%;
-                        height: 15%;
-    
-                        bottom: 27%;
-                        left: 75%;
-    
-                        &:hover img{
-                            opacity: 0;
-                            transform: rotate(315deg);
-                            transition: transform 500ms, opacity 500ms;
-                        }
-    
-                        &:hover p{
-                            opacity: 1;
-                            transition: opacity 1000ms;
-                        }
-    
-                    }
+                        bottom: 12%;
+                        right: 25%;
+                    }   
                         
                 }
             }
-        
-            .line2{
-                @extend .line1;
     
-                width: 250px;
-                height: 250px;
+        }
     
-                transform: translate(-35%,-5%) rotate(50deg);
+        .burguerClicked {
+    
+            @extend .burguerNotClicked;
+            @include XBurger();
+
+            .line1{
+                width: 400px;
+                height: 400px;
+                transform: translate(-8%, 15%);
+                opacity: 1;
+
+                .NavLinks{
+                    visibility: visible;
+
+                    .link1,.link2,.link3,.link4{
+                        opacity: 1;
+                    }
+
+                    .link1{
+                        transition-delay: 300ms;
+                    }
+                    .link2{
+                        transition-delay: 400ms;
+                    }
+                    .link3{
+                        transition-delay: 500ms;
+                    }
+                    .link4{
+                        transition-delay: 600ms;
+                    }
+                }
             }
-    
-            .line3{
-                transform: rotate(220deg);
-                background-color: white;
-                transition: transform 500ms, background-color 500ms;
-            }
-    
-            .line4{
-                transform: rotate(-220deg);
-                background-color: white;
-                transition: transform 500ms, background-color 500ms;
-            }
+
     
         }
     }
@@ -355,353 +336,4 @@ $KeyBotColor: #00CDFF;
 
 
 
-
-// $NavBarColor: white;
-// $NavBarBordercolor: rgb(2, 2, 37);
-// $NavBarBordercolor2: #10103F;
-// $NavBarBordercolorLight: black;
-
-// $ColorGradient1: #32383F;
-// $ColorGradient2: #14181D;
-
-// $KeyBotColor: #00CDFF;
-
-
-// @mixin OpenNav {
-//     transition: height 600ms, width 600ms, transform 500ms, opacity 500ms, border 1s, background-color 1s;
-// }
-
-// @mixin CloseNav {
-//     transition: border-radius 1s, width 600ms, height 250ms, transform 1s, background-color 1s;
-// }
-
-// @mixin GeneralBurguerConfig {
-//     position: absolute;
-//     width:50px;
-//     height: 50px;
-//     cursor: pointer;
-
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-around;
-
-//     right: 5%;
-
-//     div {
-//         width: 100%;
-//         height: 8px;
-//         position: relative;
-//         background-color: rgb(6, 3, 22);
-//         border-radius: 50px;
-//     }
-// }
-
-// .GlobalNavBar {
-//     z-index: 5;
-//     position: fixed;
-//     width: 98%;
-//     height: 90px;
-//     border-radius: 15px;
-//     box-shadow: 10px 10px 50px #123456;
-
-//     top: 15px;
-//     left: 1%;
-//     opacity: 1;
-
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-
-//     background: linear-gradient(to right, rgb(6, 42, 88) , $KeyBotColor);
-
-//     p{
-//         font-size: 25px;
-//     }
-
-//     .Logo{
-//         position: absolute;
-//         left: 5%;
-//         text-shadow: 0px 0px 3px white;
-
-//         font-size:35px;
-//     }
-
-
-//     .burguerNotClicked{
-
-//         @include GeneralBurguerConfig();
-
-//         div{
-//             @include CloseNav();
-//         }
-
-//         .line1{
-//             .NavLinks{
-//                 display: none;
-//             }
-//         }
-
-//         .line4{
-//             position: absolute;
-//             opacity: 0;
-//         }
-
-//     }
-
-//     .burguerClicked {
-
-//         @include GeneralBurguerConfig();
-
-//         div{
-//             position: absolute;
-//             @include OpenNav();
-//         }
-
-//         li{
-//             cursor: pointer;
-//         }
-
-//         li, img{
-//             cursor: pointer;
-//         }
-//         li, p{
-//             cursor: pointer;
-//         }
-
-//         .line1{
-//             width: 400px;
-//             height: 400px;
-//             background: rgb(8, 2, 41);
-//             border: 4px solid white;
-
-//             border-radius: 50%;
-
-//             border-top: 4px solid transparent;
-//             border-left: 1px solid white;
-//             border-right: 1px solid white;
-
-//             box-shadow: 0px 0px 5px $NavBarColor;
-
-//             transform: translate(-50%,8%) rotate(45deg);
-
-//             .NavLinks{
-//                 width: 100%;
-//                 height: 100%;
-//                 opacity: 1;
-//                 // display: block;
-
-
-//                 li{
-//                     position: absolute;
-//                     list-style: none;
-//                     font-size: 30px;
-
-//                     transform: rotate(-45deg); 
-
-//                     p{
-//                         top: 0%;
-//                         position: absolute;
-//                         color: white;
-//                         text-align: center;
-//                         opacity: 0;
-                        
-//                     }
-
-
-
-//                 }
-
-//                 .link1{
-//                     width: 15%;
-//                     height: 15%;
-//                     bottom: 25%;
-//                     left: 8%;
-
-//                     &:hover p{
-//                         opacity: 1;
-//                         transition: opacity 1000ms;
-//                     }
-
-//                     &:hover img{
-//                         opacity: 0;
-//                         transform: rotate(315deg);
-//                         transition: transform 500ms, opacity 500ms;
-//                     }
-
-//                     img{
-//                         width: 100%;
-//                         height: 100%;
-
-//                         transition: transform 1s, opacity 1s;
-//                     }
-
-//                     p{
-//                         top: 30%;
-//                         left: -10%;
-//                         transition: opacity 500ms;
-//                     }
-
-//                 }
-
-//                 .link2{
-//                     width: 15%;
-//                     height: 15%;
-//                     bottom: 12%;
-//                     left: 30%;
-
-//                     &:hover img{
-//                         opacity: 0;
-//                         transform: rotate(315deg);
-//                         transition: transform 500ms, opacity 500ms;
-//                     }
-
-//                     &:hover p{
-//                         opacity: 1;
-//                         transition: opacity 1000ms;
-//                     }
-
-//                     img{
-//                         width: 100%;
-//                         height: 100%;
-
-//                         transition: transform 1s, opacity 1s;
-//                     }
-
-//                     p{
-//                         left: -50%;
-//                         top: 10%;
-//                         transition: opacity 500ms;
-//                     }
-//                 }
-
-//                 .link3{
-//                     width: 15%;
-//                     height: 15%;
-
-//                     bottom: 10%;
-//                     left: 55%;
-
-//                     &:hover img{
-//                         opacity: 0;
-//                         transform: rotate(315deg);
-//                         transition: transform 500ms, opacity 500ms;
-//                     }
-
-//                     &:hover p{
-//                         opacity: 1;
-//                         transition: opacity 1000ms;
-//                     }
-
-//                     img{
-//                         width: 100%;
-//                         height: 100%;
-
-//                         transition: transform 1s, opacity 1s;
-//                     }
-
-//                     p{
-//                         transition: opacity 500ms;
-//                     }
-
-//                 }
-
-//                 .link4{
-//                     width: 15%;
-//                     height: 15%;
-
-//                     bottom: 27%;
-//                     left: 75%;
-
-//                     &:hover img{
-//                         opacity: 0;
-//                         transform: rotate(315deg);
-//                         transition: transform 500ms, opacity 500ms;
-//                     }
-
-//                     &:hover p{
-//                         opacity: 1;
-//                         transition: opacity 1000ms;
-//                     }
-
-//                     img{
-//                         width: 100%;
-//                         height: 100%;
-
-//                         transition: transform 1s, opacity 1s;
-//                     }
-
-//                     p{
-//                         transition: opacity 500ms;
-//                     }
-
-//                 }
-                    
-//             }
-//         }
-    
-//         .line2{
-//             @extend .line1;
-
-//             width: 250px;
-//             height: 250px;
-
-//             transform: translate(-35%,-5%) rotate(50deg);
-//         }
-
-//         .line3{
-//             transform: rotate(220deg);
-//             background-color: white;
-//         }
-
-//         .line4{
-//             transform: rotate(-220deg);
-//             background-color: white;
-//         }
-
-//     }
-// }
-
-
-// @media (max-width: 800px){
-
-//     .GlobalNavBar{
-//         .Logo{
-//             font-size: 25px;
-//         }
-//         .TeamNumber{
-//             font-size: 45px;;
-//         }
-//     }
-
-//     .GlobalNavBar .burguerClicked .line1 .NavLinks{        
-
-//         .link1{
-//             bottom: 28%;
-//             left: 6%;
-//         }
-
-//         .link2{
-//             bottom: 13%;
-//             left: 25%;
-//         }
-
-//         .link3{
-//             left: 48%;
-//             bottom: 8%;
-//         }
-
-//         .link4{
-//             left:70%;
-//             bottom: 20%;
-//         }
-//     }  
-// }
-
-// @media (min-width: 1900px){
-
-//     .GlobalNavBar{
-//         height: 120px;
-//     }
-// }
 
