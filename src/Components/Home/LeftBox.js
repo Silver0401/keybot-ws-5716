@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import Azteca from "../../Resources/azteca2.png"
 import { useTranslation } from "react-i18next";
 // import Tec from "../../Resources/tecx.png"
@@ -7,30 +7,31 @@ const HomeLeftBox = () => {
 
     const { t } = useTranslation();
 
-    let counter = 0
-    let [logoState, setLogoState] = useState(false)
+    // let counter = 0
+    // let [logoState, setLogoState] = useState(false)
     
-    const SwapLogo = () => {
-        
-        let timer = 1990
+    
+    // useEffect(() => {
+    //     const SwapLogo = () => {
+            
+    //         let timer = 1990
+    
+    //         if (logoState){
+    //             setLogoState(logoState = false)
+    //             timer = 3990
+    //         } else if (logoState === false) {
+    //             setLogoState(logoState = true)
+    //             if (counter === 0) timer = 1990
+    //             else timer = 3990
+    //         }
+    
+    //         counter += 1
+    
+    //         setTimeout(SwapLogo, timer)
+    //     }
 
-        if (logoState){
-            setLogoState(logoState = false)
-            timer = 3990
-        } else if (logoState === false) {
-            setLogoState(logoState = true)
-            if (counter === 0) timer = 1990
-            else timer = 3990
-        }
-
-        counter += 1
-
-        setTimeout(SwapLogo, timer)
-    }
-
-    useEffect(() => {
-        SwapLogo()
-    },[]) 
+    //     SwapLogo()
+    // },[]) 
 
     return(
 
@@ -59,8 +60,8 @@ const HomeLeftBox = () => {
             <div className="BoxPat">
                 <h1>{t("Home.Sponsors")}</h1>
                 <div className="Logos">
-                    <img id="img1" alt="Logo" src={Azteca} style={logoState ? { opacity: 0 } : { opacity: 1 }} ></img>
-                    <img id="img2" alt="Logo2" src={Azteca} style={logoState ? { opacity: 1 } : { opacity: 0 }} ></img>
+                    <img id="img1" alt="Logo" src={Azteca}  ></img>
+                    {/* <img id="img2" alt="Logo2" src={Azteca} style={logoState ? { opacity: 1 } : { opacity: 0 }} ></img> */}
                 </div>
             </div>
         </div>

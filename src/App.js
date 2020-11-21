@@ -1,8 +1,7 @@
 // Library Imports
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from "react-router-dom";
-// import { Route, Switch, useLocation } from "react-router-dom";
-// import { useTransition, animated } from "react-spring";
+import anime from "animejs";
 
 // NavBar Global
 import NavBar from "./Components/NavBar";
@@ -20,50 +19,73 @@ import "./PageStyling/css/Style.css";
 
 const App = () => {
 
-  // let location = useLocation()
+  useEffect(() => {
 
-  // const transitions = useTransition(location, location => location.pathname, {
+    window.onload = () => {
 
-  //   from: { opacity: 0, transform: 'translate3d(100%,0,0)'},
-  //   enter: { opacity: 1, transform: 'translate3d(0%,0,0)'},
-  //   leave: { opacity: 0, transform: 'translate3d(-50%,0,0)'}
+        // if (props.data === 0){
 
-  // })
+      const Loader =  anime.timeline({
+          easing: "easeInOutSine",
+      })
 
-  // return (
-  //   <div className="App">
+      Loader.add({
+          delay: 500,
+          targets: ".MovingBox",
+          duration: 2200,
+          translateY: ["120%", "-120%"]
+      })
+      
+      Loader.add({
+                targets: ".Loader",
+                duration: 750,
+                height: "0px"
+            }, "-=1700")
 
-  //     <NavBar />
+        // } else {
+        //     anime({
+        //         targets:".Loader",
+        //         duration: 0,
+        //         height: "0px",
+        //     })
+        // }
 
-  //     {transitions.map(({item, props, key}) => (
-  //       <animated.div key={key} style={props}>
+    }
 
-  //         <Switch location={item}>
-  //           <Route exact path="/" component={HomePage} />
-  //           <Route exact path="/ContactMePage" component={ContactMePage} />
-  //           <Route exact path="/AboutPage" component={AboutPage} />
-  //           <Route exact path="/LoginPage" component={LoginPage} />
-  //         </Switch>
 
-  //       </animated.div>
-  //     ))}
+  },[])
 
-  //   </div>
-  // ) 
 
   return (
     <div className="App">
 
-      <NavBar />
+      <div className="Loader">
+        <section className="LoadingItems">
 
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/ContactMePage" component={ContactMePage} />
-          <Route exact path="/AboutPage" component={AboutPage} />
-          <Route exact path="/LoginPage" component={LoginPage} />
-          <Route exact path="/UserCreated" component={UserCreated} />
-          <Route exact path="/LogedInPage/:id" component={LoggedIn} />
-        </Switch>
+          <span className="AnimBox">
+            <div className="Box1"></div>
+            <div className="Box2"></div>
+            <div className="Box3"></div>
+            <div className="Box4"></div>
+          </span>
+          <h1>Loading...</h1>
+
+        </section>
+
+        <div className="MovingBox"></div>
+      </div>
+
+
+      <NavBar />      
+
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/ContactMePage" component={ContactMePage} />
+        <Route exact path="/AboutPage" component={AboutPage} />
+        <Route exact path="/LoginPage" component={LoginPage} />
+        <Route exact path="/UserCreated" component={UserCreated} />
+        <Route exact path="/LogedInPage/:id" component={LoggedIn} />
+      </Switch>
 
     </div>
   ) 

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import KeybotImg from "./../../Resources/KeybotL2.png"
 
@@ -18,18 +18,22 @@ const HomeImgBox = () => {
         setTimeout(Blink, random)
     }
 
-    document.onmousemove = (event) => {
-        var x = event.clientX * 100 / window.innerWidth + "%";
-        var y = event.clientY * 100 / window.innerHeight + "%";
+    useEffect(() => {
 
-        let EyeFollower = {
-            left: x,
-            top: y,
-            transform: `translate(${-x}, ${-y})`,
+        document.onmousemove = (event) => {
+            var x = event.clientX * 100 / window.innerWidth + "%";
+            var y = event.clientY * 100 / window.innerHeight + "%";
+    
+            let EyeFollower = {
+                left: x,
+                top: y,
+                transform: `translate(${-x}, ${-y})`,
+            }
+    
+            SetEyeCoordinates(EyeFollower)
         }
+    })
 
-        SetEyeCoordinates(EyeFollower)
-    }
 
     return(
         <div className="ImgBox" >

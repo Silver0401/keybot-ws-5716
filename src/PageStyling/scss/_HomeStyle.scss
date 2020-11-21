@@ -44,23 +44,6 @@ $DarkTheme: rgb(6, 3, 22);
 }
 
 
-@keyframes ZrotateNegative{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(-359deg);
-    }
-}
-@keyframes Zrotate{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(359deg);
-    }
-}
-
 
 .HomePage{
     
@@ -537,109 +520,6 @@ $DarkTheme: rgb(6, 3, 22);
             .SelectedTheme{
                 align-self: center;
             }
-        }
-    }
-
-
-    .Loader{
-
-        @include alignCenter();
-        flex-direction: column;
-
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $BackgroundColor;
-        z-index: 2;
-        overflow: hidden;
-
-        .AnimBox{
-            @include alignCenter();
-            position: relative;
-            width: 300px;
-            height: 300px;
-
-
-            .ElectronChars{
-                content: "";
-                position: absolute;
-                width: 10px;
-                height: 10px;
-                background-color: white;
-                box-shadow: 0px 0px 20px white;
-                border-radius: 50%;
-                top: 10px;
-                right: 8px;
-            }
-
-            div{
-                position: absolute;
-                // background-color: white;
-                border-radius: 50%;
-                border: 2px solid $KeyBotColor;
-            }
-            
-            .Box1{
-                width: 15%;
-                height: 15%;
-                // border: 2px solid white;
-                background-color: $KeyBotColor;
-                box-shadow: 0px 0px 10px white;
-
-            }
-
-            .Box2{
-                width: 50%;
-                height: 50%;
-                animation: Zrotate 1.5s linear infinite;
-                
-            }
-
-            .Box3{
-                width: 70%;
-                height: 70%;
-                animation: ZrotateNegative 2.5s linear infinite;
-                
-            }
-            
-            .Box4{
-                width: 90%;
-                height: 90%;
-                animation: Zrotate 2.5s linear infinite;
-                
-            }
-
-            .Box2::before, .Box3::before, .Box4::before{
-                @extend .ElectronChars;
-            }
-
-            .Box2::before{
-                top: 30px;
-                right: 5px;
-            }
-
-            .Box3::before{
-                top: 35px;
-                right: 15px;
-            }
-
-            .Box4::before{
-                top: 55px;
-                right: 15px;
-            }
-
-        }
-
-        .MovingBox{
-            position: absolute;
-            top: 5%;
-            left: 0%;
-            width: 100%;
-            height: 90%;
-            background-color: $KeyBotColor;
-            transform: translateY(120%);
         }
     }
 }
