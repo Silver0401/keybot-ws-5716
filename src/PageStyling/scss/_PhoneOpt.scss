@@ -5,6 +5,19 @@
         .Logo{
             font-size: 17px;
         }
+
+        .LangNavBox .burguerNotClicked .line1 .NavLinks{
+
+
+            .link3{
+                left: 23%;
+                bottom: 12%;
+            }
+            .link4{
+                right: 37%;
+                bottom: 8%;
+            }
+        }
     }
 
     .HomePage{
@@ -28,8 +41,8 @@
                 height: 15%;
 
                 .LeftEyeOpened{
-                    width: 25%;
-                    height: 35%;
+                    width: 40px;
+                    height: 40px;
 
                 }   
             }
@@ -163,7 +176,7 @@
         width: 90%;
         .BotAnim{
             // height: 30%;
-            width: 85%;
+            width: 75%;
 
             .eyesBox{
 
@@ -176,6 +189,11 @@
                 .LeftEye{
                     width: 30px;
                     height: 30px;
+                }
+
+                .Mouth{
+                    margin-top: 30px;
+                    height: 8px;
                 }
             }
 
